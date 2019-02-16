@@ -1,2 +1,2 @@
-# ProfOV v.6.4.2
-Python 3.6
+# ProsfOV v.3.7.2.2-x86
+Python 3.7

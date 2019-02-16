@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-__author__ = 'Сергі Полунець'
-__versions__ = "v.3.7.2.1-32"
 import os
 names = "Baza"
 scripts = "Baza"
