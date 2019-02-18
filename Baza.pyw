@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "3.7.2.3-x86"
+__versions__ = "v.3.7.2.3"
 
 import argparse
 import datetime
@@ -821,7 +821,8 @@ class Ui_Form(object):
         for i in self.proers:
             if self.texts == "Всі підоблікові":
                 self.i = self.proers.get(i)
-                self.sefi.write("\t<p align=\"left\"><font size=\"6\"><b>* {0}</b></font> </p>".format(str(i)))
+                if self.i.__len__() > 0:
+                    self.sefi.write("\t<p align=\"left\"><font size=\"6\"><b>* {0}</b></font> </p>".format(str(i)))
                 for ia in self.i:
                     self.priis = self.i.setdefault(ia)
                     self._soname = str("{0}".format(self.priis['soname']))
