@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Baza.pyw'],
-             pathex=['C:/Program Files (x86)/Windows Kits/10/Redist/10.0.17763.0/ucrt/DLLs/x86', 'C:/Python37/Lib/site-packages/PyQt5/Qt/bin', 'D:\\Pycharm\\ProfsOV'],
+             pathex=['C:/Program Files (x86)/Windows Kits/10/Redist/10.0.17763.0/ucrt/DLLs/x86', 'C:/Python37/Lib/site-packages/PyQt5/Qt/bin', 'D:\\Документи_диска_С\\Службові документи\\Полунець\\Sorcce\\ProfsOV'],
              binaries=[],
              datas=[],
              hiddenimports=[],

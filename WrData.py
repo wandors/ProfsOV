@@ -86,7 +86,7 @@ class Datas:
         self.__PHOT = _PHOT
         self.__OUTS = _OUTS
         self.namepro = [self.__soname, self.__name, self.__father, self.__brsd, self.__profer, self.__sttu,
-                        self.__begistr, self.__dsr, self.__udz, self.__zbm, self.__endstr, self.__vid, self.__PHOT, self.__OUTS]
+                        self.__begistr, self.__dsr, self.__zbm, self.__udz, self.__endstr, self.__vid, self.__PHOT, self.__OUTS]
         self.dbfile = open(self.pathtemp + "/Prof.dbsl", 'wb')
         self.dbms = self.namepro
         pickle.dump(self.dbms, self.dbfile)
