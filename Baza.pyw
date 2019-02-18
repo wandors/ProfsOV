@@ -1097,24 +1097,20 @@ class Ui_Form(object):
                     self.seconds = self.dt.timestamp()
                     self.years = int(time.strftime('%Y'))
                     self.neztm = int(time.strftime('%m')) + 1
-                    if self.neztm == 2:
-                        self.dey = 28
-                    else:
-                        self.dey = 30
                     self.dt = datetime.datetime(self.years, self.neztm, self.inmon, 0, 0)
                     self.seconds_next = self.dt.timestamp()
                 self._soname = str("{0}".format(self.priis['soname']))
                 self._name = str("{0}".format(self.priis['name']))
                 self._father = str("{0}".format(self.priis['father']))
-                if self.seconds < self.timuot_dsr < self.seconds_next:
+                if self.seconds <= self.timuot_dsr <= self.seconds_next:
                     self.run_0 = "<b>-</b><b> ДСР</b> {3} {0} {1} {2}\n".format(self._soname, self._name, self._father,
                                                                                 self._dsr)
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_0)))
-                if self.seconds < self.timuot_zbm < self.seconds_next:
+                if self.seconds <= self.timuot_zbm <= self.seconds_next:
                     self.run_1 = "<b>-</b><b> ЗБМ</b> {3} {0} {1} {2} \n".format(self._soname, self._name, self._father,
                                                                                  self._zbm)
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_1)))
-                if self.seconds < self.timuot_udz < self.seconds_next:
+                if self.seconds <= self.timuot_udz <= self.seconds_next:
                     self.run_2 = "<b>-</b><b> УДЗ</b> {3} {0} {1} {2}\n".format(self._soname, self._name, self._father,
                                                                                 self._udz)
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_2)))
