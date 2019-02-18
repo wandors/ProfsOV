@@ -843,10 +843,10 @@ class Ui_Form(object):
         self.uiN.show()
 
     def Zvit(self):
-        self.ablist = []
         self.numint = 0
         self.oth = 0
         self.timuot = 0
+        self.ablist = []
         self.band = []
         self.kiler = []
         self.separ = []
