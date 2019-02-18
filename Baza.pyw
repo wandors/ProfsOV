@@ -881,10 +881,11 @@ class Ui_Form(object):
                 for ip in self.i:
                     self.priis = self.i.setdefault(ip)
                     if str("{0}".format(self.priis['profov'])) == "Втеча" \
-                        or str("{0}".format(self.priis['profov'])) == "Напад"\
-                        or str("{0}".format(self.priis['profov'])) == "Вживання нарокотичних речовин"\
-                        or str("{0}".format(self.priis['profov'])) == "Дії що дезорганізують роботу установи"\
-                        or str("{0}".format(self.priis['profov'])) == "Організація азартних ігор під матеріалну зацікавленість":
+                        or str("{0}".format(self.priis['profov'])) == "Напад" \
+                        or str("{0}".format(self.priis['profov'])) == "Вживання нарокотичних речовин" \
+                        or str("{0}".format(self.priis['profov'])) == "Дії що дезорганізують роботу установи" \
+                        or str("{0}".format(
+                        self.priis['profov'])) == "Організація азартних ігор під матеріалну зацікавленість":
                         self.numint += 1
             for i in self.proerss:
                 self.i = self.proerss.get(i)
@@ -983,7 +984,8 @@ class Ui_Form(object):
             self.sefi.write("\t<h1 align=\"center\"> <font size=\"18\">Звіт ствном на {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
             self.sefi.write(
-                "\t<p align=\"left\"><font size=\"6\">* Всіх на обліку: {0}</font> </p>".format(str(self.allss - self.oth)))
+                "\t<p align=\"left\"><font size=\"6\">* Всіх на обліку: {0}</font> </p>".format(
+                    str(self.allss - self.oth)))
             self.sefi.write(
                 "\t<p align=\"left\"><font size=\"6\">* На обліку ОСК: {0}</font> </p>".format(str(self.al - self.oz)))
             self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Авторитет: {0}</font> </p>".format(str(self.avt)))

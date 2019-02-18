@@ -23,6 +23,10 @@
           <option value="E125" />
           <option value="E501" />
           <option value="W292" />
+          <option value="W605" />
+          <option value="E722" />
+          <option value="E122" />
+          <option value="E712" />
         </list>
       </option>
     </inspection_tool>
@@ -38,6 +42,7 @@
     </inspection_tool>
     <inspection_tool class="PyRedundantParenthesesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PyShadowingNamesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PySimplifyBooleanCheckInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="PyUnboundLocalVariableInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="PyUnresolvedReferencesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
