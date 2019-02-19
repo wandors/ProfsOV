@@ -13,7 +13,6 @@ import tempfile
 import time
 import zlib
 import operator
-import string
 import Profs_rc
 from PyQt5 import QtCore, QtGui, QtWidgets
 import WrData
