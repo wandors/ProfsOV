@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
             self.f = open(self.files, "wb")
             self.f.close()
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1030, 620)
+        MainWindow.resize(990, 630)
         self.resolution = QtWidgets.QDesktopWidget().screenGeometry()
         MainWindow.move((self.resolution.width() / 2) - (MainWindow.frameSize().width() / 2),
                   (self.resolution.height() / 2) - (MainWindow.frameSize().height() / 2))

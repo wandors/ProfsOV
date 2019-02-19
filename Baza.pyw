@@ -13,6 +13,7 @@ import tempfile
 import time
 import zlib
 import operator
+import string
 import Profs_rc
 from PyQt5 import QtCore, QtGui, QtWidgets
 import WrData
@@ -34,7 +35,7 @@ class Ui_Form(object):
             self.f = open(self.files, "wb")
             self.f.close()
         Form.setObjectName("Form")
-        Form.resize(1020, 587)
+        Form.resize(1020, 620)
         self.resolution = QtWidgets.QDesktopWidget().screenGeometry()
         Form.move((self.resolution.width() / 2) - (Form.frameSize().width() / 2),
                   (self.resolution.height() / 2) - (Form.frameSize().height() / 2))
@@ -581,6 +582,7 @@ class Ui_Form(object):
         self.pushButton_8.setText(_translate("Form", "Пільги"))
         self.clearform()
 
+
     def Loadeds(self):
         self.files = QtWidgets.QFileDialog.getOpenFileName(Form, "Загрузити базу ...", os.environ['USERPROFILE'],
                                                            "dbs (*dbs)")
@@ -617,7 +619,7 @@ class Ui_Form(object):
         self.pushButton_2.setEnabled(False)
 
     def combo_chosen(self):
-        self.listWidget.itemClicked.connect(self.showItem)
+        #self.listWidget.itemClicked.connect(self.showItem)
         self.listsp = []
         self.listWidget.clear()
         self.clearform()
@@ -675,6 +677,7 @@ class Ui_Form(object):
             pass
 
     def showItem(self, item):
+        self.sles = item.isSelected()
         self.item = item.text()
         self.itemin = self.item.find(" ")
         if self.xPro == True:
@@ -832,11 +835,15 @@ class Ui_Form(object):
                     self._brsd = str("{0}".format(self.priis['birsdey']))
                     try:
                         self._vids = str("{0}".format(self.priis['VID']))
+                        try:
+                            self._vides = "Відділення № " + str(int(self._vids))
+                        except:
+                            self._vides = self._vids
                     except:
                         self._vids = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н,  Відділення №{4}</font> </p>".format(
-                            self._soname, self._name, self._father, self._brsd, self._vids))
+                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н,  {4}</font> </p>".format(
+                            self._soname, self._name, self._father, self._brsd, self._vides))
         self.sefi.close()
         self.uiN = Window()
         self.uiN.handleOpen()
