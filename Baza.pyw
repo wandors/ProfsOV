@@ -814,11 +814,15 @@ class Ui_Form(object):
                     self._brsd = str("{0}".format(self.priis['birsdey']))
                     try:
                         self._vids = str("{0}".format(self.priis['VID']))
+                        try:
+                            self._vides = "Відділення № " + str(int(self._vids))
+                        except:
+                            self._vides = self._vids
                     except:
                         self._vids = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н,  Відділення №{4} </font> </p>".format(
-                            self._soname, self._name, self._father, self._brsd, self._vids))
+                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4}</font> </p>".format(
+                            self._soname, self._name, self._father, self._brsd, self._vides))
 
         for i in self.proers:
             if self.texts == "Всі підоблікові":
@@ -841,7 +845,7 @@ class Ui_Form(object):
                     except:
                         self._vids = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н,  {4}</font> </p>".format(
+                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4}</font> </p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides))
         self.sefi.close()
         self.uiN = Window()
