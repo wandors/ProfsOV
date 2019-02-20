@@ -848,7 +848,7 @@ class Ui_Form(object):
                         "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4}</font> </p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides))
         self.sefi.close()
-        self.uiN = Window()
+        self.uiN = Window("Список підоблікових")
         self.uiN.handleOpen()
         self.uiN.show()
 
@@ -1016,14 +1016,14 @@ class Ui_Form(object):
                 (self.al - self.numint) - (
                     self.kil + self.ban + self.avt + self.lid + self.sep + self.narc + self.prot))))
             self.sefi.close()
-            self.uiN = Window()
+            self.uiN = Window("Звіт по підобліовим")
             self.uiN.handleOpen()
             self.uiN.show()
         except:
             self.sefi.write("\t<h1 align=\"center\"> <font size=\"18\">Звіт ствном на {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
             self.sefi.close()
-            self.uiN = Window()
+            self.uiN = Window("Звіт по підобліовим")
             self.uiN.handleOpen()
             self.ZvN.show()
 
@@ -1125,7 +1125,7 @@ class Ui_Form(object):
                                                                                 self._udz)
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_2)))
         self.sefi.close()
-        self.uiN = Window()
+        self.uiN = Window("Пільги по підобліовии")
         self.uiN.handleOpen()
         self.uiN.show()
 

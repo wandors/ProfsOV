@@ -7,14 +7,15 @@ import Profs_rc
 
 class Window(QtWidgets.QWidget):
     pathtemp = tempfile.gettempdir() + "/Proftemp"
-    def __init__(self):
+    titles = ""
+    def __init__(self, titles):
         QtWidgets.QDialog.__init__(self)
         self.setFixedSize(960, 600)
         self.resolution = QtWidgets.QDesktopWidget().screenGeometry()
         self.move((self.resolution.width() / 2) - (self.frameSize().width() / 2),
                   (self.resolution.height() / 2) - (self.frameSize().height() / 2))
         self.activateWindow()
-        self.setWindowTitle(self.tr('Document Printer'))
+        self.setWindowTitle(self.tr(titles))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/Icon/Profico.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setWindowModality(QtCore.Qt.ApplicationModal)
