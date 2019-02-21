@@ -1125,7 +1125,7 @@ class Ui_Form(object):
                                                                                 self._udz)
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_2)))
         self.sefi.close()
-        self.uiN = Window("Пільги по підобліовии")
+        self.uiN = Window("Пільги по підобліовим")
         self.uiN.handleOpen()
         self.uiN.show()
 
