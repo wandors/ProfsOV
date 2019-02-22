@@ -826,7 +826,7 @@ class Ui_Form(object):
                         self.wisitse = ""
                     self.sefi.write(
                         "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4} {5}</font> </p>".format(
-                            self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse ))
+                            self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
 
         for i in self.proers:
             if self.texts == "Всі підоблікові":
