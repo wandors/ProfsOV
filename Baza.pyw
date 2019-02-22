@@ -844,9 +844,13 @@ class Ui_Form(object):
                             self._vides = self._vids
                     except:
                         self._vids = ""
+                    if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                        self.wisitse = "ТИМЧАСОВО ВИБУВ З УСТАНОВИ"
+                    else:
+                        self.wisitse = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4}</font> </p>".format(
-                            self._soname, self._name, self._father, self._brsd, self._vides))
+                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4} {5}</font> </p>".format(
+                            self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
         self.sefi.close()
         self.uiN = Window("Список підоблікових")
         self.uiN.handleOpen()
