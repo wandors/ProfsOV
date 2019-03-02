@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.7.2.3"
+__versions__ = "v.3.7.2.4"
 
 import argparse
 import datetime
@@ -151,6 +151,10 @@ class Ui_Form(object):
         self.comboBox.setFont(font)
         self.comboBox.setEditable(False)
         self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -542,25 +546,29 @@ class Ui_Form(object):
         self.comboBox.setItemText(0, _translate("Form", "Всі підоблікові"))
         self.comboBox.setItemText(1, _translate("Form", "Авторитет"))
         self.comboBox.setItemText(2, _translate("Form", "Бандетизм"))
-        self.comboBox.setItemText(3, _translate("Form", "Вбивство на замовлення"))
+        self.comboBox.setItemText(3, _translate("Form", "Вбивство на замовлення")) # ч2 cn 115
         self.comboBox.setItemText(4, _translate("Form", "Вживання нарокотичних речовин"))
         self.comboBox.setItemText(5, _translate("Form", "Виготовлення зброї, вибухових пристроїв"))
-        self.comboBox.setItemText(6, _translate("Form", "Втеча"))
-        self.comboBox.setItemText(7, _translate("Form", "Вступили в незаконні бандитські угрупування"))
+        self.comboBox.setItemText(6, _translate("Form", "Вступили в незаконні бандитські угрупування")) # ст.260
+        self.comboBox.setItemText(7, _translate("Form", "Втеча"))
         self.comboBox.setItemText(8, _translate("Form", "Дії що дезорганізують роботу установи"))
         self.comboBox.setItemText(9, _translate("Form", "Захоплення заручників"))
-        self.comboBox.setItemText(10, _translate("Form", "Зловживання владою або службовим становищем"))
+        self.comboBox.setItemText(10, _translate("Form", "Зловживання владою або службовим становищем")) #ч.2 ст. 364
         self.comboBox.setItemText(11, _translate("Form", "Злодіїв в законі"))
         self.comboBox.setItemText(12, _translate("Form", "Лідер ОЗГ"))
-        self.comboBox.setItemText(13, _translate("Form", "Напад"))
-        self.comboBox.setItemText(14, _translate("Form", "Наркоділки з міжрегіональними звязками"))
-        self.comboBox.setItemText(15, _translate("Form", "Нецільове використання бюджетних коштів"))
-        self.comboBox.setItemText(16, _translate("Form", "Організація азартних ігор під матеріалну зацікавленість"))
-        self.comboBox.setItemText(17, _translate("Form", "Проти основ національної безпеки"))
-        self.comboBox.setItemText(18, _translate("Form", "Службові злочини"))
-        self.comboBox.setItemText(19, _translate("Form", "Ухилення від сплати податків"))
-        self.comboBox.setItemText(20, _translate("Form", "Хабар"))
-        self.comboBox.setItemText(21, _translate("Form", "Шахрайство"))
+        self.comboBox.setItemText(13, _translate("Form", "Масові заворушення")) #ст.330
+        self.comboBox.setItemText(14, _translate("Form", "Напад"))
+        self.comboBox.setItemText(15, _translate("Form", "Наркоділки з міжрегіональними звязками")) #ст.305
+        self.comboBox.setItemText(16, _translate("Form", "Нецільове використання бюджетних коштів"))  # ч.2 ст.210
+        self.comboBox.setItemText(17, _translate("Form", "Організація азартних ігор під матеріалну зацікавленість"))
+        self.comboBox.setItemText(18, _translate("Form", "Проти основ національної безпеки"))
+        self.comboBox.setItemText(19, _translate("Form", "Резонанс в ЗМІ"))
+        self.comboBox.setItemText(20, _translate("Form", "Розв'язування війни"))# ст.437
+        self.comboBox.setItemText(21, _translate("Form", "Службові злочини"))# ч.5 ст.191
+        self.comboBox.setItemText(22, _translate("Form", "Терористичний акт"))# ст.258-ст.258\5
+        self.comboBox.setItemText(23, _translate("Form", "Ухилення від сплати податків")) # ч.2 ч.3 ст.212
+        self.comboBox.setItemText(24, _translate("Form", "Отримання неправомірної винагороди"))# ч.2 ч.3 ст.368
+        self.comboBox.setItemText(25, _translate("Form", "Шахрайство"))# ч.4 ст.190
         self.label_8.setText(_translate("Form", "УДЗ"))
         self.label_12.setText(_translate("Form", "Зловживання владою або службовим становищем"))
         self.label_7.setText(_translate("Form", "ЗБМ"))
@@ -618,7 +626,7 @@ class Ui_Form(object):
         self.pushButton_2.setEnabled(False)
 
     def combo_chosen(self):
-        #self.listWidget.itemClicked.connect(self.showItem)
+        self.listWidget.itemClicked.connect(self.showItem)
         self.listsp = []
         self.listWidget.clear()
         self.clearform()
@@ -1020,7 +1028,7 @@ class Ui_Form(object):
             self.sefi.write(
                 "\t<p align=\"left\"><font size=\"5\">- Наркоділки з міжрегіональними звязками: {0}</font> </p>".format(
                     str(self.narc)))
-            self.sefi.write("\t<p align=\"left\"><font size=\"6\">* Інші ОСК: {0}</font> </p>".format(str(
+            self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Інші ОСК: {0}</font> </p>".format(str(
                 (self.al - self.numint) - (
                     self.kil + self.ban + self.avt + self.lid + self.sep + self.narc + self.prot))))
             self.sefi.close()
