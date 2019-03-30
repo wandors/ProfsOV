@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.7.2.4"
+__versions__ = "v.3.7.3.4"
 
 import argparse
 import datetime
