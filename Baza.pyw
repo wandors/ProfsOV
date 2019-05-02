@@ -591,7 +591,7 @@ class Ui_Form(object):
 
 
     def Loadeds(self):
-        self.files = QtWidgets.QFileDialog.getOpenFileName(Form, "Загрузити базу ...", os.environ['USERPROFILE'],
+        self.files = QtWidgets.QFileDialog.getOpenFileName(Form, "Завантажити базу ...", os.environ['USERPROFILE'],
                                                            "dbs (*dbs)")
         self.files = self.files[0]
         if self.files == "":
