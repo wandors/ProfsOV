@@ -7,5 +7,5 @@ class Main():
     def __init__(self, statuss):
         self.teste = statuss
         print(self.teste)
-
+        print("googds")
 Main("ggod")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.7.3.4"
+__versions__ = "v.3.7.3.5"
 
 import argparse
 import datetime
@@ -880,6 +880,16 @@ class Ui_Form(object):
         self.protiv = []
         self.avtoritet = []
         self.narcdil = []
+        self.teror = []
+        self.zaruch = []
+        self.zlod = []
+        self.vlada = []
+        self.mzavor = []
+        self.kosht = []
+        self.zmi = []
+        self.wars = []
+        self.podat = []
+        self.viag = []
         self.temfil = self.pathtemp + "/_temp.html"
         self.sefi = open(self.temfil, 'w')
         self.sefi.write("<!DOCTYPE html>")
@@ -910,6 +920,7 @@ class Ui_Form(object):
                         or str("{0}".format(self.priis['profov'])) == "Напад" \
                         or str("{0}".format(self.priis['profov'])) == "Вживання нарокотичних речовин" \
                         or str("{0}".format(self.priis['profov'])) == "Дії що дезорганізують роботу установи" \
+                        or str("{0}".format(self.priis['profov'])) == "Виготовлення зброї, вибухових пристроїв" \
                         or str("{0}".format(
                         self.priis['profov'])) == "Організація азартних ігор під матеріалну зацікавленість":
                         self.numint += 1
@@ -996,6 +1007,116 @@ class Ui_Form(object):
                             self.timuot += 1
                         else:
                             self.narcdil.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Терористичний акт":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.teror.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Захоплення заручників":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.zaruch.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Зловживання владою або службовим становищем":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.vlada.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Злодіїв в законі":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.zlod.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Масові заворушення":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.mzavor.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Нецільове використання бюджетних коштів":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.kosht.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Резонанс в ЗМІ":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.zmi.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Розв'язування війни":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.wars.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Ухилення від сплати податків":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.podat.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Отримання неправомірної винагороди":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.podat.append(self._soname)
                     if len(self.i) == 0:
                         pass
             self.al = self.all - self.oth
