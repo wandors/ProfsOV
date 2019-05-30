@@ -1149,9 +1149,10 @@ class Ui_Form(object):
             self.sefi.write(
                 "\t<p align=\"left\"><font size=\"5\">- Наркоділки з міжрегіональними звязками: {0}</font> </p>".format(
                     str(self.narc)))
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Інші ОСК: {0}</font> </p>".format(str(
-                (self.al - self.numint) - (
-                    self.kil + self.ban + self.avt + self.lid + self.sep + self.narc + self.prot))))
+            #Добавити уылькысть облыкы та кылкысть пдоблыкових осыб
+            #self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Інші ОСК: {0}</font> </p>".format(str(
+             #   (self.al - self.numint) - (
+              #      self.kil + self.ban + self.avt + self.lid + self.sep + self.narc + self.prot))))
             self.sefi.close()
             self.uiN = Window("Звіт по підобліовим")
             self.uiN.handleOpen()
