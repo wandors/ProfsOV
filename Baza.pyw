@@ -34,8 +34,8 @@ class Ui_Form(object):
             self.f = open(self.files, "wb")
             self.f.close()
         Form.setObjectName("Form")
-        Form.resize(1020, 620)
         self.resolution = QtWidgets.QDesktopWidget().screenGeometry()
+        Form.resize(1120, 650)
         Form.move((self.resolution.width() / 2) - (Form.frameSize().width() / 2),
                   (self.resolution.height() / 2) - (Form.frameSize().height() / 2))
         font = QtGui.QFont()
