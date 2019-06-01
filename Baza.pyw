@@ -932,6 +932,17 @@ class Ui_Form(object):
                     if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
                         self.oth += 1
             for i in self.proerss:
+                if i == "Авторитет":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.avtoritet.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
                 if i == "Бандетизм":
                     self.i = self.proerss.get(i)
                     for ip in self.i:
@@ -985,17 +996,6 @@ class Ui_Form(object):
                             self.timuot += 1
                         else:
                             self.protiv.append(self._soname)
-                    if len(self.i) == 0:
-                        pass
-                if i == "Авторитет":
-                    self.i = self.proerss.get(i)
-                    for ip in self.i:
-                        self.priis = self.i.setdefault(ip)
-                        self._soname = str("{0}".format(self.priis['soname']))
-                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
-                            self.timuot += 1
-                        else:
-                            self.avtoritet.append(self._soname)
                     if len(self.i) == 0:
                         pass
                 if i == "Наркоділки з міжрегіональними звязками":
