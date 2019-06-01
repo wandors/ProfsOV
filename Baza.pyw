@@ -1135,8 +1135,10 @@ class Ui_Form(object):
                     str(self.allss - self.oth)))
             self.sefi.write(
                 "\t<p align=\"left\"><font size=\"6\">* На обліку ОСК: {0}</font> </p>".format(str(self.al - self.oz)))
+            """
             self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Авторитет: {0}</font> </p>".format(str(self.avt)))
             self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Бандетизм: {0}</font> </p>".format(str(self.ban)))
+           
             self.sefi.write(
                 "\t<p align=\"left\"><font size=\"5\">- Вбивство на замовлення: {0}</font> </p>".format(str(self.kil)))
             self.sefi.write(
@@ -1149,10 +1151,9 @@ class Ui_Form(object):
             self.sefi.write(
                 "\t<p align=\"left\"><font size=\"5\">- Наркоділки з міжрегіональними звязками: {0}</font> </p>".format(
                     str(self.narc)))
+            """
             #Добавити уылькысть облыкы та кылкысть пдоблыкових осыб
-            #self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Інші ОСК: {0}</font> </p>".format(str(
-             #   (self.al - self.numint) - (
-              #      self.kil + self.ban + self.avt + self.lid + self.sep + self.narc + self.prot))))
+            self.sefi.write("\t<p align=\"left\"><font size=\"6\">* Інші підоблікові: {0}</font> </p>".format((self.allss - self.oth)-(self.al - self.oz)))
             self.sefi.close()
             self.uiN = Window("Звіт по підобліовим")
             self.uiN.handleOpen()
