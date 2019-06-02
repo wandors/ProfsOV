@@ -1153,7 +1153,8 @@ class Ui_Form(object):
                     str(self.narc)))
             """
             #Добавити уылькысть облыкы та кылкысть пдоблыкових осыб
-            self.sefi.write("\t<p align=\"left\"><font size=\"6\">* Інші підоблікові: {0}</font> </p>".format((self.allss - self.oth)-(self.al - self.oz)))
+            self.sefi.write("\t<p align=\"left\"><font size=\"6\">* Інші підоблікові: {0}</font> </p>".format(
+                (self.allss - self.oth)-(self.al - self.oz)))
             self.sefi.close()
             self.uiN = Window("Звіт по підобліовим")
             self.uiN.handleOpen()
