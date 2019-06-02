@@ -10,16 +10,34 @@ class Datas:
         self.soname = soname
         self.name = name
         self.father = father
-        self.birsdey = birsdey
         self.profov = profov
         self.stt = stt
-        self.begin_dey = begin_dey
-        self.DSR = DSR
-        self.ZBM = ZBM
-        self.UDZ = UDZ
+        if birsdey == "17.09.1930":
+            self.birsdey = ""
+        else:
+            self.birsdey = birsdey
+        if begin_dey == "01.01.2001":
+            self.begin_dey = ""
+        else:
+            self.begin_dey = begin_dey
+        if DSR == "03.01.2016":
+            self.DSR = ""
+        else:
+            self.DSR = DSR
+        if ZBM == "01.01.2017":
+            self.ZBM = ""
+        else:
+            self.ZBM = ZBM
+        if UDZ == "01.01.2017":
+            self.UDZ = ""
+        else:
+            self.UDZ = UDZ
+        if end_dey == "02.01.2018":
+            self.end_dey = ""
+        else:
+            self.end_dey = end_dey
         self.photo = PHOT
         self.vid = VID
-        self.end_dey = end_dey
         self.outs = OUTS
         self.vid = VID
         self.photo = PHOT

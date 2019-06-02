@@ -276,7 +276,7 @@ class Ui_FormN(object):
         self.dateEdit.setStyleSheet("")
         self.dateEdit.setAlignment(QtCore.Qt.AlignCenter)
         self.dateEdit.setMinimumDate(QtCore.QDate(1945, 1, 1))
-        self.dateEdit.setDate(QtCore.QDate(1960, 9, 17))
+        self.dateEdit.setDate(QtCore.QDate(1930, 9, 17))
         self.dateEdit.setObjectName("dateEdit")
         self.gridLayout_10.addWidget(self.dateEdit, 5, 1, 1, 2)
         self.dateEdit_6 = QtWidgets.QDateEdit(FormN)
@@ -660,16 +660,28 @@ class Ui_FormN(object):
         self.fpp.write(self.fzp)
         self.fpp.close()
         self.label.setPixmap(QtGui.QPixmap(self.pathtemp + "/_zpn.png"))
+        if self.datalists[3] == "":
+            self.datalists[3] = "17.09.1930"
         self.year = datetime.strptime(self.datalists[3], '%d.%m.%Y').date()
         self.dateEdit.setDate(self.year)
+        if self.datalists[6] == "":
+            self.datalists[6] = "01.01.2001"
         self.year = datetime.strptime(self.datalists[6], '%d.%m.%Y').date()
         self.dateEdit_2.setDate(self.year)
+        if self.datalists[7] == "":
+            self.datalists[7] = "03.01.2016"
         self.year = datetime.strptime(self.datalists[7], '%d.%m.%Y').date()
         self.dateEdit_3.setDate(self.year)
+        if self.datalists[8] == "":
+            self.datalists[8] = "01.01.2017"
         self.year = datetime.strptime(self.datalists[8], '%d.%m.%Y').date()
         self.dateEdit_4.setDate(self.year)
+        if self.datalists[9] == "":
+            self.datalists[9] = "01.01.2017"
         self.year = datetime.strptime(self.datalists[9], '%d.%m.%Y').date()
         self.dateEdit_5.setDate(self.year)
+        if self.datalists[10] == "":
+            self.datalists[10] = "02.01.2018"
         self.year = datetime.strptime(self.datalists[10], '%d.%m.%Y').date()
         self.dateEdit_6.setDate(self.year)
 
