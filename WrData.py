@@ -124,3 +124,5 @@ class Datas:
         self.dbms = self.data
         pickle.dump(self.dbms, self.dbfile)
         self.dbfile.close()
+
+    #Потрібно добавити функцію очистки бази від пустих обліків

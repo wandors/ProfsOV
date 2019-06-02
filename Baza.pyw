@@ -547,7 +547,7 @@ class Ui_Form(object):
         self.comboBox.setItemText(1, _translate("Form", "Авторитет"))
         self.comboBox.setItemText(2, _translate("Form", "Бандетизм"))
         self.comboBox.setItemText(3, _translate("Form", "Вбивство на замовлення")) # ч2 cn 115
-        self.comboBox.setItemText(4, _translate("Form", "Вживання нарокотичних речовин"))
+        self.comboBox.setItemText(4, _translate("Form", "Вживання наркотичних речовин"))
         self.comboBox.setItemText(5, _translate("Form", "Виготовлення зброї, вибухових пристроїв"))
         self.comboBox.setItemText(6, _translate("Form", "Вступили в незаконні бандитські угрупування")) # ст.260
         self.comboBox.setItemText(7, _translate("Form", "Втеча"))
@@ -918,7 +918,7 @@ class Ui_Form(object):
                     self.priis = self.i.setdefault(ip)
                     if str("{0}".format(self.priis['profov'])) == "Втеча" \
                         or str("{0}".format(self.priis['profov'])) == "Напад" \
-                        or str("{0}".format(self.priis['profov'])) == "Вживання нарокотичних речовин" \
+                        or str("{0}".format(self.priis['profov'])) == "Вживання наркотичних речовин" \
                         or str("{0}".format(self.priis['profov'])) == "Дії що дезорганізують роботу установи" \
                         or str("{0}".format(self.priis['profov'])) == "Виготовлення зброї, вибухових пристроїв" \
                         or str("{0}".format(

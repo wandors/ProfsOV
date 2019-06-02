@@ -511,7 +511,7 @@ class Ui_FormN(object):
         self.comboBox_5.setItemText(0, _translate("FormN", "Авторитет"))
         self.comboBox_5.setItemText(1, _translate("FormN", "Бандетизм"))
         self.comboBox_5.setItemText(2, _translate("FormN", "Вбивство на замовлення"))
-        self.comboBox_5.setItemText(3, _translate("FormN", "Вживання нарокотичних речовин"))
+        self.comboBox_5.setItemText(3, _translate("FormN", "Вживання наркотичних речовин"))
         self.comboBox_5.setItemText(4, _translate("FormN", "Виготовлення зброї, вибухових пристроїв"))
         self.comboBox_5.setItemText(5, _translate("FormN", "Вступили в незаконні бандитські угрупування"))
         self.comboBox_5.setItemText(6, _translate("FormN", "Втеча"))
