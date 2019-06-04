@@ -125,4 +125,19 @@ class Datas:
         pickle.dump(self.dbms, self.dbfile)
         self.dbfile.close()
 
-    #Потрібно добавити функцію очистки бази від пустих обліків
+    def ClearDB(self, files):
+        self.ld = []
+        self.files = files
+        self.opfil = open(self.files, "rb")
+        self.data = pickle.load(self.opfil)
+        self.opfil.close()
+        for i in self.data:
+            self.ii = self.data.get(i)
+            if self.ii.__len__() == 0:
+                self.ld.append(i)
+        for il in self.ld:
+            self.data.pop(il)
+        self.dbfile = open(self.files, 'wb')
+        self.dbms = self.data
+        pickle.dump(self.dbms, self.dbfile)
+        self.dbfile.close()

@@ -636,6 +636,7 @@ class Ui_Form(object):
             self.ff = open(self.pathtemp + "\\Profs.dbsp", "r")
             self.files = self.ff.read()
             self.ff.close()
+            WrData.Datas().ClearDB(files=self.files)
             self.dats = WrData.Datas().reddata(files=self.files)
             self.lispr = self.dats
             self.pushButton_2.setEnabled(False)
@@ -1218,8 +1219,14 @@ class Ui_Form(object):
             for ip in self.i:
                 self.priis = self.i.setdefault(ip)
                 self._dsr = str("{0}".format(self.priis['DSR']))
+                if self._dsr == "":
+                    self._dsr = "03.01.2016"
                 self._zbm = str("{0}".format(self.priis['ZBM']))
+                if self._zbm == "":
+                    self._zbm = "01.01.2017"
                 self._udz = str("{0}".format(self.priis['UDZ']))
+                if self._udz == "":
+                    self._udz = "01.01.2017"
                 self.tdsr = datetime.datetime(int(self._dsr[6:]), int(self._dsr[3:5]), int(self._dsr[:2]), 0, 0)
                 self.timuot_dsr = time.mktime(self.tdsr.timetuple())
                 self.tzbm = datetime.datetime(int(self._zbm[6:]), int(self._zbm[3:5]), int(self._zbm[:2]), 0, 0)
