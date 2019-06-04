@@ -879,6 +879,7 @@ class Ui_Form(object):
         self.separ = []
         self.lider = []
         self.protiv = []
+        self.slugba = []
         self.avtoritet = []
         self.narcdil = []
         self.teror = []
@@ -964,6 +965,17 @@ class Ui_Form(object):
                             self.timuot += 1
                         else:
                             self.kiler.append(self._soname)
+                    if len(self.i) == 0:
+                        pass
+                if i == "Службові злочини":
+                    self.i = self.proerss.get(i)
+                    for ip in self.i:
+                        self.priis = self.i.setdefault(ip)
+                        self._soname = str("{0}".format(self.priis['soname']))
+                        if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
+                            self.timuot += 1
+                        else:
+                            self.slugba.append(self._soname)
                     if len(self.i) == 0:
                         pass
                 if i == "Вступили в незаконні бандитські угрупування":
@@ -1117,25 +1129,40 @@ class Ui_Form(object):
                         if str("{0}".format(self.priis['OUTS'])) == "withdrawn":
                             self.timuot += 1
                         else:
-                            self.podat.append(self._soname)
+                            self.viag.append(self._soname)
                     if len(self.i) == 0:
                         pass
             self.al = self.all - self.oth
             self.oz = self.numint
             self.avt = len(self.avtoritet)
-            self.lid = len(self.lider)
             self.ban = len(self.band)
-            self.prot = len(self.protiv)
-            self.sep = len(self.separ)
-            self.narc = len(self.narcdil)
             self.kil = len(self.kiler)
+            self.sep = len(self.separ)
+            self.lid = len(self.lider)
+            self.prot = len(self.protiv)
+            self.narc = len(self.narcdil)
+            self.slu = len(self.slugba)
+            self.ter = len(self.teror)
+            self.zar = len(self.zaruch)
+            self.vlad = len(self.vlada)
+            self.zlo = len(self.zlod)
+            self.mzav = len(self.mzavor)
+            self.kosh = len(self.mzavor)
+            self.zmii = len(self.zmi)
+            self.war = len(self.wars)
+            self.pod = len(self.podat)
+            self.vin = len(self.viag)
+            # Встановити правелність рзрахунку підоблікових!!!!!
+            self.OSK = (self.avt + self.ban + self.kil + self.sep +  self.lid + self.prot +
+                        self.narc + self.ter + self.zar + self.vlad +  self.zlo + self.mzav +
+                        self.kosh + self.zmii + self.war + self.pod + self.vin + self.slu) - self.timuot
             self.sefi.write("\t<h1 align=\"center\"> <font size=\"18\">Звіт ствном на {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
             self.sefi.write(
                 "\t<p align=\"left\"><font size=\"6\">* Всіх на обліку: {0}</font> </p>".format(
                     str(self.allss - self.oth)))
             self.sefi.write(
-                "\t<p align=\"left\"><font size=\"6\">* На обліку ОСК: {0}</font> </p>".format(str(self.al - self.oz)))
+                "\t<p align=\"left\"><font size=\"6\">* На обліку ОСК: {0}</font> </p>".format(str(self.OSK)))
             """
             self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Авторитет: {0}</font> </p>".format(str(self.avt)))
             self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Бандетизм: {0}</font> </p>".format(str(self.ban)))
@@ -1155,7 +1182,7 @@ class Ui_Form(object):
             """
             #Добавити уылькысть облыкы та кылкысть пдоблыкових осыб
             self.sefi.write("\t<p align=\"left\"><font size=\"6\">* Інші підоблікові: {0}</font> </p>".format(
-                (self.allss - self.oth)-(self.al - self.oz)))
+                ((self.allss - self.oth) - self.OSK)))
             self.sefi.close()
             self.uiN = Window("Звіт по підобліовим")
             self.uiN.handleOpen()
