@@ -1153,9 +1153,9 @@ class Ui_Form(object):
             self.pod = len(self.podat)
             self.vin = len(self.viag)
             # Встановити правелність рзрахунку підоблікових!!!!!
-            self.OSK = (self.avt + self.ban + self.kil + self.sep +  self.lid + self.prot +
-                        self.narc + self.ter + self.zar + self.vlad +  self.zlo + self.mzav +
-                        self.kosh + self.zmii + self.war + self.pod + self.vin + self.slu) - self.timuot
+            self.OSK = (self.avt + self.ban + self.kil + self.sep + self.lid + self.prot +
+                        self.narc + self.ter + self.zar + self.vlad + self.zlo + self.mzav +
+                        self.kosh + self.zmii + self.war + self.pod + self.vin + self.slu)
             self.sefi.write("\t<h1 align=\"center\"> <font size=\"18\">Звіт ствном на {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
             self.sefi.write(
@@ -1291,7 +1291,7 @@ class Ui_Form(object):
                                                                                 self._dsr)
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_0)))
                 if self.seconds <= self.timuot_zbm <= self.seconds_next:
-                    self.run_1 = "<b>-</b><b> ЗБМ</b> {3} {0} {1} {2} \n".format(self._soname, self._name, self._father,
+                    self.run_1 = "<b>-</b><b> ЗБМ</b> {3} {0} {1} {2}\n".format(self._soname, self._name, self._father,
                                                                                  self._zbm)
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_1)))
                 if self.seconds <= self.timuot_udz <= self.seconds_next:
