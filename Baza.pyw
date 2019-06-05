@@ -862,7 +862,8 @@ class Ui_Form(object):
                     else:
                         self.wisitse = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4} {5}</font> </p>".format(
+                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4} "
+                        "</font> <font color=\"red\" font size=\"4\" ><b>{5}</b></font></p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
         self.sefi.close()
         self.uiN = Window("Список підоблікових")
@@ -1162,24 +1163,6 @@ class Ui_Form(object):
                     str(self.allss - self.oth)))
             self.sefi.write(
                 "\t<p align=\"left\"><font size=\"6\">* На обліку ОСК: {0}</font> </p>".format(str(self.OSK)))
-            """
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Авторитет: {0}</font> </p>".format(str(self.avt)))
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Бандетизм: {0}</font> </p>".format(str(self.ban)))
-           
-            self.sefi.write(
-                "\t<p align=\"left\"><font size=\"5\">- Вбивство на замовлення: {0}</font> </p>".format(str(self.kil)))
-            self.sefi.write(
-                "\t<p align=\"left\"><font size=\"5\">- Вступили в незаконні бандитські угрупування: {0}</font> </p>".format(
-                    str(self.sep)))
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\">- Лідер ОЗГ: {0}</font> </p>".format(str(self.lid)))
-            self.sefi.write(
-                "\t<p align=\"left\"><font size=\"5\">- Проти основ національної безпеки: {0}</font> </p>".format(
-                    str(self.prot)))
-            self.sefi.write(
-                "\t<p align=\"left\"><font size=\"5\">- Наркоділки з міжрегіональними звязками: {0}</font> </p>".format(
-                    str(self.narc)))
-            """
-            #Добавити уылькысть облыкы та кылкысть пдоблыкових осыб
             self.sefi.write("\t<p align=\"left\"><font size=\"6\">* Інші підоблікові: {0}</font> </p>".format(
                 ((self.allss - self.oth) - self.OSK)))
             self.sefi.close()
