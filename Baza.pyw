@@ -1152,7 +1152,6 @@ class Ui_Form(object):
             self.war = len(self.wars)
             self.pod = len(self.podat)
             self.vin = len(self.viag)
-            # Встановити правелність рзрахунку підоблікових!!!!!
             self.OSK = (self.avt + self.ban + self.kil + self.sep + self.lid + self.prot +
                         self.narc + self.ter + self.zar + self.vlad + self.zlo + self.mzav +
                         self.kosh + self.zmii + self.war + self.pod + self.vin + self.slu)
