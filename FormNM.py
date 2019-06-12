@@ -275,7 +275,7 @@ class Ui_FormN(object):
         self.dateEdit.setFont(font)
         self.dateEdit.setStyleSheet("")
         self.dateEdit.setAlignment(QtCore.Qt.AlignCenter)
-        self.dateEdit.setMinimumDate(QtCore.QDate(1945, 1, 1))
+        self.dateEdit.setMinimumDate(QtCore.QDate(1925, 1, 1))
         self.dateEdit.setDate(QtCore.QDate(1930, 9, 17))
         self.dateEdit.setObjectName("dateEdit")
         self.gridLayout_10.addWidget(self.dateEdit, 5, 1, 1, 2)
