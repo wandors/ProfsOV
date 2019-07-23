@@ -834,7 +834,7 @@ class Ui_Form(object):
                     else:
                         self.wisitse = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4} {5}</font> </p>".format(
+                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3} р. н.  {4} {5}</font> </p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
 
         for i in self.proers:
@@ -862,7 +862,7 @@ class Ui_Form(object):
                     else:
                         self.wisitse = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3}р.н.  {4} "
+                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3} р. н.  {4} "
                         "</font> <font color=\"red\" font size=\"4\" ><b>{5}</b></font></p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
         self.sefi.close()
@@ -1274,7 +1274,7 @@ class Ui_Form(object):
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_0)))
                 if self.seconds <= self.timuot_zbm <= self.seconds_next:
                     self.run_1 = "<b>-</b><b> ЗБМ</b> {3} {0} {1} {2}\n".format(self._soname, self._name, self._father,
-                                                                                 self._zbm)
+                                                                                self._zbm)
                     self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_1)))
                 if self.seconds <= self.timuot_udz <= self.seconds_next:
                     self.run_2 = "<b>-</b><b> УДЗ</b> {3} {0} {1} {2}\n".format(self._soname, self._name, self._father,
