@@ -8,3 +8,5 @@ class Main():
         print("Hello world!!!")
         input("...")
 Main()
+
+

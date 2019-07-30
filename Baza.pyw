@@ -565,7 +565,7 @@ class Ui_Form(object):
         self.comboBox.setItemText(19, _translate("Form", "Резонанс в ЗМІ"))
         self.comboBox.setItemText(20, _translate("Form", "Розв'язування війни"))# ст.437
         self.comboBox.setItemText(21, _translate("Form", "Службові злочини"))# ч.5 ст.191
-        self.comboBox.setItemText(22, _translate("Form", "Терористичний акт"))# ст.258-ст.258\5
+        self.comboBox.setItemText(22, _translate("Form", "Тероризм"))# ст.258-ст.258\5
         self.comboBox.setItemText(23, _translate("Form", "Ухилення від сплати податків")) # ч.2 ч.3 ст.212
         self.comboBox.setItemText(24, _translate("Form", "Отримання неправомірної винагороди"))# ч.2 ч.3 ст.368
         self.comboBox.setItemText(25, _translate("Form", "Шахрайство"))# ч.4 ст.190
