@@ -1023,7 +1023,7 @@ class Ui_Form(object):
                             self.narcdil.append(self._soname)
                     if len(self.i) == 0:
                         pass
-                if i == "Терористичний акт":
+                if i == "Тероризм":
                     self.i = self.proerss.get(i)
                     for ip in self.i:
                         self.priis = self.i.setdefault(ip)
