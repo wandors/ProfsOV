@@ -589,7 +589,6 @@ class Ui_Form(object):
         self.pushButton_8.setText(_translate("Form", "Пільги"))
         self.clearform()
 
-
     def Loadeds(self):
         self.files = QtWidgets.QFileDialog.getOpenFileName(Form, "Завантажити базу ...", os.environ['USERPROFILE'],
                                                            "dbs (*dbs)")
