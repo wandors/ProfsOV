@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.7.3.5"
+__versions__ = "v.3.7.3.6"
 
 import argparse
 import datetime
@@ -576,7 +576,7 @@ class Ui_Form(object):
         self.pushButton_4.setText(_translate("Form", "Завантажити"))
         self.label.setText(_translate("Form", "П.І.Б."))
         self.label_25.setText(_translate("Form", "ФОТО"))
-        self.label_23.setText(_translate("Form", "Відділення"))
+        self.label_23.setText(_translate("Form", ""))
         self.label_19.setText(_translate("Form", "Профілактичний облік"))
         self.pushButton_3.setText(_translate("Form", "Зберегти як"))
         self.pushButton_5.setText(_translate("Form", "Список"))
@@ -718,7 +718,13 @@ class Ui_Form(object):
         except:
             self.label_26.setText("")
         self._vids = str("{0}".format(self.priis['VID']))
-        self.label_24.setText(self._vids)
+        try:
+            self._vids = int(self._vids)
+            self.label_23.setText("Відділення")
+        except:
+            self._vids = self._vids
+            self.label_23.setText("Дільниця")
+        self.label_24.setText(str(self._vids))
         self.photozl = self.priis['PHOT']
         self._photof = zlib.decompress(self.photozl)
         self.df = open(self.pathtemp + "/_zpn.png", "wb")
