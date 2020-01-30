@@ -839,7 +839,8 @@ class Ui_Form(object):
                     else:
                         self.wisitse = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3} р. н.  {4} {5}</font> </p>".format(
+                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3} р. н.  {4} "
+                        "</font> <font color=\"red\" font size=\"4\" ><b>{5}</b></font></p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
 
         for i in self.proers:
