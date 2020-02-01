@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Baza.pyw'],
-             pathex=['C:/Program Files (x86)/Windows Kits/10/Redist/10.0.17763.0/ucrt/DLLs/x86', 'C:/Python37/Lib/site-packages/PyQt5/Qt/bin', 'D:\\Pycharm\\ProfsOV'],
+             pathex=['C:/Python37/Lib/site-packages/PyQt5/Qt/bin', 'D:\\Документи_диска_С\\Службові документи\\Полунець\\Sorcce\\ProfsOV'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -14,15 +14,15 @@ a = Analysis(['Baza.pyw'],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
              cipher=block_cipher,
-             noarchive=True)
+             noarchive=False)
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
-          [('v', None, 'OPTION')],
+          [],
           exclude_binaries=True,
           name='Baza',
-          debug=True,
+          debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
