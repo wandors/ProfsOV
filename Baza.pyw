@@ -517,7 +517,7 @@ class Ui_Form(object):
         self.pushButton_2.clicked.connect(self.EditProf)
         self.pushButton_3.clicked.connect(self.SavProfs)
         self.pushButton_5.clicked.connect(self.Exports)
-        self.pushButton_6.clicked.connect(self.Zvit)
+        self.pushButton_6.clicked.connect(self._Control)
         self.pushButton_7.clicked.connect(self.Exitss)
         self.pushButton_8.clicked.connect(self.Pilgi)
         self.comboBox.activated.connect(self.combo_chosen)
@@ -1293,6 +1293,36 @@ class Ui_Form(object):
                          "Зловживання владою або службовим становищем": "п.1.14", "Тероризм": "п1.15", "Вступили в незаконні бандитські угрупування": "п.1.16",
                          "Масові заворушення": "п.1.17", "Усфері державної таємниці": "п.1.18", "Розв'язування війни": "п.1.19",
                          "Дії що дезорганізують роботу установи": "п.1.20"}
+        self.temfil = self.pathtemp + "/_temp.html"
+        self.sefi = open(self.temfil, 'w')
+        self.sefi.write("<!DOCTYPE html>")
+        self.sefi.write("<html lang=\"en\">")
+        self.sefi.write("<head>")
+        self.sefi.write("\t<meta charset=\"windows-1251\">")
+        self.sefi.write("</head>")
+        self.ffs = open(self.pathtemp + "/Profs.dbsp", "r")
+        self.filess = self.ffs.read()
+        self.ffs.close()
+        try:
+            self.opfils = open(self.filess, "rb")
+            self.datas = pickle.load(self.opfils)
+            self.opfils.close()
+            self.proerss = self.datas
+            self.plist = []
+            for i in self.proerss:
+
+
+        except:
+            pass
+
+
+
+
+
+        self.sefi.close()
+        self.uiN = Window("Пільги по підобліовим")
+        self.uiN.handleOpen()
+        self.uiN.show()
 
 
 if __name__ == "__main__":
