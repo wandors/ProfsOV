@@ -3,12 +3,9 @@
     <file>Profico.ico</file>
   </qresource>
   <qresource prefix="image">
-    <file>Splash.png</file>
-    <file>People.png</file>
-    <file>Books2.png</file>
-    <file>Books.png</file>
-  </qresource>
-  <qresource prefix="Trizub">
-    <file>Gerb.png</file>
+      <file>Splash.png</file>
+      <file>People.png</file>
+      <file>Books2.png</file>
+      <file>Books.png</file>
   </qresource>
 </RCC>

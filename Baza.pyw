@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.8.3.5"
+__versions__ = "v.3.7.3.5"
 
 import argparse
 import datetime
@@ -517,7 +517,7 @@ class Ui_Form(object):
         self.pushButton_2.clicked.connect(self.EditProf)
         self.pushButton_3.clicked.connect(self.SavProfs)
         self.pushButton_5.clicked.connect(self.Exports)
-        self.pushButton_6.clicked.connect(self._Control)
+        self.pushButton_6.clicked.connect(self.Zvit)
         self.pushButton_7.clicked.connect(self.Exitss)
         self.pushButton_8.clicked.connect(self.Pilgi)
         self.comboBox.activated.connect(self.combo_chosen)
@@ -561,7 +561,7 @@ class Ui_Form(object):
         self.comboBox.setItemText(15, _translate("Form", "Наркоділки з міжрегіональними звязками")) #ст.305
         self.comboBox.setItemText(16, _translate("Form", "Нецільове використання бюджетних коштів"))  # ч.2 ст.210
         self.comboBox.setItemText(17, _translate("Form", "Організація азартних ігор під матеріалну зацікавленість"))
-        self.comboBox.setItemText(18, _translate("Form", "Проти основ національної безпеки")) #ст.109 - ст.114
+        self.comboBox.setItemText(18, _translate("Form", "Проти основ національної безпеки"))
         self.comboBox.setItemText(19, _translate("Form", "Резонанс в ЗМІ"))
         self.comboBox.setItemText(20, _translate("Form", "Розв'язування війни"))# ст.437
         self.comboBox.setItemText(21, _translate("Form", "Службові злочини"))# ч.5 ст.191
@@ -1285,62 +1285,6 @@ class Ui_Form(object):
         self.uiN.handleOpen()
         self.uiN.show()
 
-    def _Control(self):
-        self.listprof = {"Злодіїв в законі": "п.1.1", "Авторитет": "п.1.2",  "Лідер ЗС": "п.1.3", "Резонанс в ЗМІ": "п.1.4",
-                         "Проти основ національної безпеки": "п.1.5", "Вбивство на замовлення": "п.1.6", "Лідер ОЗГ": "п.1.7",
-                         "Бандетизм": "п.1.8", "Наркоділки з міжрегіональними звязками": "п.1.9", "Шахрайство": "п.1.10",
-                         "Службові злочини": "п.1.11", "Нецільове використання бюджетних коштів": "п.1.12",
-                         "Ухилення від сплати податків": "п.1.13","Зловживання владою або службовим становищем": "п.1.14",
-                         "Тероризм": "п.1.15", "Вступили в незаконні бандитські угрупування": "п.1.16", "Масові заворушення": "п.1.17",
-                         "Жержавна таємниця": "п.1.19","Розв'язування війни": "п.1.19", "Дії що дезорганізують роботу установи": "п.1.20"}
-        self.temfil = self.pathtemp + "/_temp.html"
-        self.sefi = open(self.temfil, 'w')
-        self.sefi.write("<!DOCTYPE html>")
-        self.sefi.write("<html lang=\"en\">")
-        self.sefi.write("<head>")
-        self.sefi.write("\t<meta charset=\"windows-1251\">")
-        self.sefi.write("</head>")
-        self.sefi.write("<body>")
-        self.sefi.write("\t<p align=\"Center\"><b><font size=\"6\">Державна установа</font></b></p>")
-        self.sefi.write("\t<p align=\"Center\"><b><font size=\"6\">«Полицька виправна колонія (№76)»</font></b></p>")
-        self.sefi.write("\t<p align=\"Center\"><b><font size=\"5\">Список осіб</font></b></p>")
-        self.ffs = open(self.pathtemp + "/Profs.dbsp", "r")
-        self.filess = self.ffs.read()
-        self.ffs.close()
-
-        try:
-            self.opfils = open(self.filess, "rb")
-            self.datas = pickle.load(self.opfils)
-            self.opfils.close()
-            self.proerss = self.datas
-            self.plist = []
-            for i in self.proerss:
-                self.i = self.proers.get(i)
-                if self.i.__len__() > 0:
-                    self.xx = 0
-                    for ip in self.listprof:
-                        if str(i) == str(ip):
-                            self.xx += 1
-                            self.pp = self.listprof.get(ip)
-                            self.plist.append(self.pp)
-
-                            for ia in self.i:
-                                self.x += 1
-                                self.priis = self.i.setdefault(ia)
-                                self._soname = str("{0}".format(self.priis['soname']))
-                                self._name = str("{0}".format(self.priis['name']))
-                                self._father = str("{0}".format(self.priis['father']))
-                                self._brsd = str("{0}".format(self.priis['birsdey']))
-                                self.sefi.write(
-                                    "\t<p align=\"left\"><font size=\"5\">{0}. {1} {2}, {3} {4} р. н."
-                                    "</font></p>".format(self.x, self._soname, self._name, self._father, self._brsd))
-
-        except:
-            pass
-        self.sefi.close()
-        self.uiN = Window("Контроль")
-        self.uiN.handleOpen()
-        self.uiN.show()
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
