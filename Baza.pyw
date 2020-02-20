@@ -482,6 +482,7 @@ class Ui_Form(object):
         self.pushButton_6.setObjectName("pushButton_6")
         self.gridLayout.addWidget(self.pushButton_6, 17, 6, 1, 1)
         self.pushButton_7 = QtWidgets.QPushButton(Form)
+        self.pushButton_7.setEnabled(False)
         self.pushButton_7.setObjectName("pushButton_7")
         self.gridLayout.addWidget(self.pushButton_7, 17, 7, 1, 3)
         self.pushButton_8 = QtWidgets.QPushButton(Form)
@@ -517,7 +518,7 @@ class Ui_Form(object):
         self.pushButton_2.clicked.connect(self.EditProf)
         self.pushButton_3.clicked.connect(self.SavProfs)
         self.pushButton_5.clicked.connect(self.Exports)
-        self.pushButton_6.clicked.connect(self._Control)
+        self.pushButton_6.clicked.connect(self.Zvit)
         self.pushButton_7.clicked.connect(self.Exitss)
         self.pushButton_8.clicked.connect(self.Pilgi)
         self.comboBox.activated.connect(self.combo_chosen)
@@ -581,7 +582,7 @@ class Ui_Form(object):
         self.pushButton_3.setText(_translate("Form", "Зберегти як"))
         self.pushButton_5.setText(_translate("Form", "Список"))
         self.pushButton_6.setText(_translate("Form", "Звіт"))
-        self.pushButton_7.setText(_translate("Form", "Закрити"))
+        self.pushButton_7.setText(_translate("Form", "Контроль"))
         self.label_26.setText(_translate("Form", "Тимчасово вибув з кстанови"))
         if len(self.files) > 45:
             self.files = "{0}...{1}".format(self.files[:25], self.files[len(self.files) - 20:])
@@ -643,6 +644,7 @@ class Ui_Form(object):
             self.pushButton_5.setEnabled(True)
             self.pushButton_6.setEnabled(True)
             self.pushButton_8.setEnabled(True)
+            self.pushButton_7.setEnabled(True)
             try:
                 self.xPro = True
                 self.namepr = self.dats[self.texts]
@@ -795,7 +797,7 @@ class Ui_Form(object):
         self.label_26.setText("")
 
     def Exitss(self):
-        sys.exit(True)
+        self._Control()
 
     def Exports(self):
         self.temfil = self.pathtemp + "/_temp.html"
@@ -1300,6 +1302,8 @@ class Ui_Form(object):
         self.sefi.write("<head>")
         self.sefi.write("\t<meta charset=\"windows-1251\">")
         self.sefi.write("</head>")
+        self.sefi.write("\t<h1 align=\"center\"> <font size=\"7\">Державна установа</font> </h1>")
+        self.sefi.write("\t<h1 align=\"center\"> <font size=\"7\">«Полицька виправна колонія (№76)»</font> </h1>")
         self.ffs = open(self.pathtemp + "/Profs.dbsp", "r")
         self.filess = self.ffs.read()
         self.ffs.close()
@@ -1309,18 +1313,38 @@ class Ui_Form(object):
             self.opfils.close()
             self.proerss = self.datas
             self.plist = []
-            for i in self.proerss:
+            for i in self.listprof:
+                for ip in self.proerss:
+                    self.i = self.proerss.get(i)
+                    if str(ip) == str(i):
+                        self.sefi.write("\t<p align=\"Center\"><font size=\"5\"><b>{0}</b></font> </p>".format(str(self.listprof.get(ip))))
+                        if self.i.__len__() > 0:
+                            self.xx = 0
+                            for ia in self.i:
+                                self.xx += 1
+                                self.priis = self.i.setdefault(ia)
+                                self._soname = str("{0}".format(self.priis['soname']))
+                                self._name = str("{0}".format(self.priis['name']))
+                                self._father = str("{0}".format(self.priis['father']))
+                                self._brsd = str("{0}".format(self.priis['birsdey']))
+                                self.sefi.write(
+                                    "\t<p align=\"left\"><font size=\"5\"> {0}. {1} {2} {3} {4}р.н."
+                                    "</font></p>".format(self.xx, self._soname, self._name, self._father, self._brsd))
+            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b> </b></font></p>")#Задать интервал
+            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>Оперуповноважений оперативного відділу </b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>державної установи «Полицька </b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>виправна колонія (№76)»</b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><pre><b>капітану внутрішньої служби &emsp; &ensp; &ensp; "
+                            "&emsp; &ensp; &ensp; &emsp; &ensp; &ensp; Полунець С.В. </b></pre></font></p>")
 
 
         except:
-            pass
-
-
-
-
-
+            self.sefi.close()
+            self.uiN = Window("Контроль що місячний")
+            self.uiN.handleOpen()
+            self.uiN.show()
         self.sefi.close()
-        self.uiN = Window("Пільги по підобліовим")
+        self.uiN = Window("Контроль що місячний")
         self.uiN.handleOpen()
         self.uiN.show()
 
