@@ -1302,8 +1302,9 @@ class Ui_Form(object):
         self.sefi.write("<head>")
         self.sefi.write("\t<meta charset=\"windows-1251\">")
         self.sefi.write("</head>")
-        self.sefi.write("\t<h1 align=\"center\"> <font size=\"7\">Державна установа</font> </h1>")
-        self.sefi.write("\t<h1 align=\"center\"> <font size=\"7\">«Полицька виправна колонія (№76)»</font> </h1>")
+        self.sefi.write("\t<h1 align=\"center\"> <font size=\"7\">Державна установа<br>«Полицька виправна колонія (№76)»</font> </h1>")
+        self.sefi.write("<style>hi {line-height: 1.5;} hi {line-height: 0.5;}</style><br>")
+
         self.ffs = open(self.pathtemp + "/Profs.dbsp", "r")
         self.filess = self.ffs.read()
         self.ffs.close()
@@ -1330,7 +1331,7 @@ class Ui_Form(object):
                                 self.sefi.write(
                                     "\t<p align=\"left\"><font size=\"5\"> {0}. {1} {2} {3} {4}р.н."
                                     "</font></p>".format(self.xx, self._soname, self._name, self._father, self._brsd))
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b> </b></font></p>")#Задать интервал
+            self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style><br><br>")
             self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>Оперуповноважений оперативного відділу </b></font></p>")
             self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>державної установи «Полицька </b></font></p>")
             self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>виправна колонія (№76)»</b></font></p>")
