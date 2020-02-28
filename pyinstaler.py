@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-names = "Baza"
+names = "Профоблік"
 scripts = "Baza"
 icons = "Profico"
 num = 2
