@@ -1335,8 +1335,8 @@ class Ui_Form(object):
             self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>Оперуповноважений оперативного відділу </b></font></p>")
             self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>державної установи «Полицька </b></font></p>")
             self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>виправна колонія (№76)»</b></font></p>")
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><pre><b>капітан внутрішньої служби &emsp; &ensp; &ensp; "
-                            "&emsp; &ensp; &ensp; &emsp; &ensp; &ensp; Полунець С.В. </b></pre></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b><pre>капітан внутрішньої служби &emsp; &ensp; &ensp; "
+                            "&emsp; &ensp; &ensp; &emsp; &ensp; &ensp; Полунець С.В. </pre></b></font></p>")
 
 
         except:
