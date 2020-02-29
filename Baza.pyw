@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.7.3.5"
+__versions__ = "v.3.5.6.1"
 
 import argparse
 import datetime
@@ -1302,7 +1302,7 @@ class Ui_Form(object):
         self.sefi.write("<head>")
         self.sefi.write("\t<meta charset=\"windows-1251\">")
         self.sefi.write("</head>")
-        self.sefi.write("\t<h1 align=\"center\"> <font size=\"7\">Державна установа<br>«Полицька виправна колонія (№76)»</font> </h1>")
+        self.sefi.write("\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"7\">Державна установа<br>«Полицька виправна колонія (№76)»</font> </h1>")
         self.sefi.write("<style>hi {line-height: 1.5;} hi {line-height: 0.5;}</style><br>")
 
         self.ffs = open(self.pathtemp + "/Profs.dbsp", "r")
@@ -1318,7 +1318,7 @@ class Ui_Form(object):
                 for ip in self.proerss:
                     self.i = self.proerss.get(i)
                     if str(ip) == str(i):
-                        self.sefi.write("\t<p align=\"Center\"><font size=\"5\"><b>{0}</b></font> </p>".format(str(self.listprof.get(ip))))
+                        self.sefi.write("\t<p align=\"Center\"><font face=\"Times New Roman\" size=\"5\"><b>{0}</b></font> </p>".format(str(self.listprof.get(ip))))
                         if self.i.__len__() > 0:
                             self.xx = 0
                             for ia in self.i:
@@ -1332,11 +1332,11 @@ class Ui_Form(object):
                                     "\t<p align=\"left\"><font size=\"5\"> {0}. {1} {2} {3} {4}р.н."
                                     "</font></p>".format(self.xx, self._soname, self._name, self._father, self._brsd))
             self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style><br><br>")
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>Оперуповноважений оперативного відділу </b></font></p>")
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>державної установи «Полицька </b></font></p>")
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b>виправна колонія (№76)»</b></font></p>")
-            self.sefi.write("\t<p align=\"left\"><font size=\"5\"><b><pre>капітан внутрішньої служби &emsp; &ensp; &ensp; "
-                            "&emsp; &ensp; &ensp; &emsp; &ensp; &ensp; Полунець С.В. </pre></b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>Оперуповноважений оперативного відділу </b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>державної установи «Полицька </b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>виправна колонія (№76)»</b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>капітан внутрішньої служби &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Полунець С.В. </b></font></p>")
 
 
         except:
