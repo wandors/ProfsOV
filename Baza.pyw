@@ -1304,7 +1304,7 @@ class Ui_Form(object):
         self.sefi.write("</head>")
 
         self.sefi.write("\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"7\">Державна установа<br>«Полицька виправна колонія (№76)»</font> </h1>")
-        self.sefi.write("<style>hi {line-height: 1.5;} hi {line-height: 0.5;}</style><br>")
+        self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style>")
 
         self.ffs = open(self.pathtemp + "/Profs.dbsp", "r")
         self.filess = self.ffs.read()
