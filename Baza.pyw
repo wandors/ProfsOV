@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.5.6.1"
+__versions__ = "v.3.5.6.2"
 
 import argparse
 import datetime
@@ -809,13 +809,13 @@ class Ui_Form(object):
         self.sefi.write("</head>")
         self.sefi.write("<body>")
         self.sefi.write(
-            "\t<h1 align=\"center\"> <font size=\"18\">Список підоблікових осіб станом {0}р.</font> </h1>".format(
+            "\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"18\">Список підоблікових осіб станом {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
         self.proers = self.dats
         for ai in self.proers:
             self.i = self.lispr.get(ai)
             if ai == self.texts:
-                self.sefi.write("\t<p align=\"left\"><font size=\"6\">* {0}</font> </p>".format(str(self.texts)))
+                self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\">* {0}</font> </p>".format(str(self.texts)))
                 for ip in self.i:
                     self.priis = self.i.setdefault(ip)
                     self._soname = str("{0}".format(self.priis['soname']))
@@ -836,14 +836,14 @@ class Ui_Form(object):
                     else:
                         self.wisitse = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3} р. н.  {4} {5}</font> </p>".format(
+                        "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\">- {0} {1} {2}, {3} р. н.  {4} {5}</font> </p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
 
         for i in self.proers:
             if self.texts == "Всі підоблікові":
                 self.i = self.proers.get(i)
                 if self.i.__len__() > 0:
-                    self.sefi.write("\t<p align=\"left\"><font size=\"6\"><b>* {0}</b></font> </p>".format(str(i)))
+                    self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\"><b>* {0}</b></font> </p>".format(str(i)))
                 for ia in self.i:
                     self.priis = self.i.setdefault(ia)
                     self._soname = str("{0}".format(self.priis['soname']))
@@ -865,7 +865,7 @@ class Ui_Form(object):
                         self.wisitse = ""
                     self.sefi.write(
                         "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3} р. н.  {4} "
-                        "</font> <font color=\"red\" font size=\"4\" ><b>{5}</b></font></p>".format(
+                        "</font> <font color=\"red\" font face=\"Times New Roman\" size=\"4\" ><b>{5}</b></font></p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
         self.sefi.close()
         self.uiN = Window("Список підоблікових")
@@ -1158,21 +1158,21 @@ class Ui_Form(object):
             self.OSK = (self.avt + self.ban + self.kil + self.sep + self.lid + self.prot +
                         self.narc + self.ter + self.zar + self.vlad + self.zlo + self.mzav +
                         self.kosh + self.zmii + self.war + self.pod + self.vin + self.slu)
-            self.sefi.write("\t<h1 align=\"center\"> <font size=\"18\">Звіт ствном на {0}р.</font> </h1>".format(
+            self.sefi.write("\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"18\">Звіт ствном на {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
             self.sefi.write(
-                "\t<p align=\"left\"><font size=\"6\">* Всіх на обліку: {0}</font> </p>".format(
+                "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\">* Всіх на обліку: {0}</font> </p>".format(
                     str(self.allss - self.oth)))
             self.sefi.write(
-                "\t<p align=\"left\"><font size=\"6\">* На обліку ОСК: {0}</font> </p>".format(str(self.OSK)))
-            self.sefi.write("\t<p align=\"left\"><font size=\"6\">* Інші підоблікові: {0}</font> </p>".format(
+                "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\">* На обліку ОСК: {0}</font> </p>".format(str(self.OSK)))
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\">* Інші підоблікові: {0}</font> </p>".format(
                 ((self.allss - self.oth) - self.OSK)))
             self.sefi.close()
             self.uiN = Window("Звіт по підобліовим")
             self.uiN.handleOpen()
             self.uiN.show()
         except:
-            self.sefi.write("\t<h1 align=\"center\"> <font size=\"18\">Звіт ствном на {0}р.</font> </h1>".format(
+            self.sefi.write("\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"18\">Звіт ствном на {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
             self.sefi.close()
             self.uiN = Window("Звіт по підобліовим")
@@ -1217,7 +1217,7 @@ class Ui_Form(object):
             for self.i in range(0, len(self.monslist)):
                 if self.i + 1 == int(time.strftime("%m")):
                     self.mun = self.monslist[self.i]
-        self.sefi.write("\t<h1 align=\"center\"> <font size=\"18\">Матеріали на {0} {1}p.</font> </h1>".format(self.mun,
+        self.sefi.write("\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"18\">Матеріали на {0} {1}p.</font> </h1>".format(self.mun,
                                                                                                                str(
                                                                                                                    self.years)))
         self.ff = open(self.pathtemp + "/Profs.dbsp", "r")
@@ -1273,15 +1273,15 @@ class Ui_Form(object):
                 if self.seconds <= self.timuot_dsr <= self.seconds_next:
                     self.run_0 = "<b>-</b><b> ДСР</b> {3} {0} {1} {2}\n".format(self._soname, self._name, self._father,
                                                                                 self._dsr)
-                    self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_0)))
+                    self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"> {0}</font> </p>".format(str(self.run_0)))
                 if self.seconds <= self.timuot_zbm <= self.seconds_next:
                     self.run_1 = "<b>-</b><b> ЗБМ</b> {3} {0} {1} {2}\n".format(self._soname, self._name, self._father,
                                                                                 self._zbm)
-                    self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_1)))
+                    self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"> {0}</font> </p>".format(str(self.run_1)))
                 if self.seconds <= self.timuot_udz <= self.seconds_next:
                     self.run_2 = "<b>-</b><b> УДЗ</b> {3} {0} {1} {2}\n".format(self._soname, self._name, self._father,
                                                                                 self._udz)
-                    self.sefi.write("\t<p align=\"left\"><font size=\"5\"> {0}</font> </p>".format(str(self.run_2)))
+                    self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"> {0}</font> </p>".format(str(self.run_2)))
         self.sefi.close()
         self.uiN = Window("Пільги по підобліовим")
         self.uiN.handleOpen()
