@@ -1302,10 +1302,8 @@ class Ui_Form(object):
         self.sefi.write("<head>")
         self.sefi.write("\t<meta charset=\"windows-1251\">")
         self.sefi.write("</head>")
-
         self.sefi.write("\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"7\">Державна установа<br>«Полицька виправна колонія (№76)»</font> </h1>")
         self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style>")
-
         self.ffs = open(self.pathtemp + "/Profs.dbsp", "r")
         self.filess = self.ffs.read()
         self.ffs.close()
@@ -1330,7 +1328,7 @@ class Ui_Form(object):
                                 self._father = str("{0}".format(self.priis['father']))
                                 self._brsd = str("{0}".format(self.priis['birsdey']))
                                 self.sefi.write(
-                                    "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"> {0}. {1} {2} {3} {4}р.н."
+                                    "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"> {0}. {1} {2} {3} {4} р.н."
                                     "</font></p>".format(self.xx, self._soname, self._name, self._father, self._brsd[6:]))
             self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style><br><br>")
             self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>Оперуповноважений оперативного відділу </b></font></p>")
@@ -1338,7 +1336,6 @@ class Ui_Form(object):
             self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>виправна колонія (№76)»</b></font></p>")
             self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>капітан внутрішньої служби &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                             "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Полунець С.В. </b></font></p>")
-
 
         except:
             self.sefi.close()
