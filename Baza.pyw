@@ -811,11 +811,14 @@ class Ui_Form(object):
         self.sefi.write(
             "\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"18\">Список підоблікових осіб станом {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
+        self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style>")
         self.proers = self.dats
         for ai in self.proers:
             self.i = self.lispr.get(ai)
             if ai == self.texts:
-                self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\">* {0}</font> </p>".format(str(self.texts)))
+                self.sefi.write("<style>p {line-height: 2;} p {line-height: 1;}</style><br>")
+                self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\"><b>* {0}</font> </p>".format(str(self.texts)))
+                self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style><br>")
                 for ip in self.i:
                     self.priis = self.i.setdefault(ip)
                     self._soname = str("{0}".format(self.priis['soname']))
@@ -843,7 +846,9 @@ class Ui_Form(object):
             if self.texts == "Всі підоблікові":
                 self.i = self.proers.get(i)
                 if self.i.__len__() > 0:
+                    self.sefi.write("<style>p {line-height: 2;} p {line-height: 1;}</style><br>")
                     self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\"><b>* {0}</b></font> </p>".format(str(i)))
+                    self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style><br>")
                 for ia in self.i:
                     self.priis = self.i.setdefault(ia)
                     self._soname = str("{0}".format(self.priis['soname']))
