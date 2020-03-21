@@ -82,5 +82,5 @@ class Window(QtWidgets.QWidget):
             printer.setOutputFileName(self.files)
             printer.setOutputFormat(QtPrintSupport.QPrinter.PdfFormat)
             printer.setPageSize(QtPrintSupport.QPrinter.A4)
-            printer.setPageMargins(15, 15, 15, 15, QtPrintSupport.QPrinter.Millimeter)
+            printer.setPageMargins(0, 0, 0, 0, QtPrintSupport.QPrinter.Millimeter)
             doc.print_(printer)
