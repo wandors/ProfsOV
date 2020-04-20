@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.5.6.2"
+__versions__ = "v.3.5.6.3"
 
 import argparse
 import datetime
@@ -21,12 +21,12 @@ from zvits import Window
 
 
 class Ui_Form(object):
-    if sys.platform ==' win32':
+    if sys.platform == 'win32':
         if not os.path.exists(tempfile.gettempdir() + "\Proftemp"):
             os.mkdir(tempfile.gettempdir() + "\Proftemp")
         pathtemp = tempfile.gettempdir() + "\Proftemp"
     if sys.platform == 'linux':
-        if not os.path.exists(os.environ['HOME'] + "\Proftemp") == False:
+        if not os.path.exists(os.environ['HOME'] + "/Proftemp"):
             os.mkdir(os.environ['HOME'] + "/Proftemp")
         pathtemp = os.environ['HOME'] + "/Proftemp"
 
@@ -1384,7 +1384,7 @@ if __name__ == "__main__":
     else:
         if sys.platform == 'win32':
             pethstart = os.environ['USERPROFILE'] + "\Профоблік.dbs"
-        if sys.platform =='linux':
+        if sys.platform == 'linux':
             pethstart = os.environ['HOME'] + "/Профоблік.dbs"
     time.sleep(3)
     Form = QtWidgets.QWidget()
