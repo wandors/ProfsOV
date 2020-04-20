@@ -21,9 +21,14 @@ from zvits import Window
 
 
 class Ui_Form(object):
-    if not os.path.exists(tempfile.gettempdir() + "\Proftemp"):
-        os.mkdir(tempfile.gettempdir() + "\Proftemp")
-    pathtemp = tempfile.gettempdir() + "\Proftemp"
+    if sys.platform ==' win32':
+        if not os.path.exists(tempfile.gettempdir() + "\Proftemp"):
+            os.mkdir(tempfile.gettempdir() + "\Proftemp")
+        pathtemp = tempfile.gettempdir() + "\Proftemp"
+    if sys.platform == 'linux':
+        if not os.path.exists(os.environ['HOME'] + "\Proftemp") == False:
+            os.mkdir(os.environ['HOME'] + "/Proftemp")
+        pathtemp = os.environ['HOME'] + "/Proftemp"
 
     def setupUi(self, Form, path):
         self.files = path
@@ -592,8 +597,11 @@ class Ui_Form(object):
 
 
     def Loadeds(self):
-        self.files = QtWidgets.QFileDialog.getOpenFileName(Form, "Завантажити базу ...", os.environ['USERPROFILE'],
-                                                           "dbs (*dbs)")
+        if sys.platform == 'win32':
+            self.loads = os.environ['USERPROFILE']
+        if sys.platform == 'linux':
+            self.loads = os.environ['HOME']
+        self.files = QtWidgets.QFileDialog.getOpenFileName(Form, "Завантажити базу ...", self.loads, "dbs (*dbs)")
         self.files = self.files[0]
         if self.files == "":
             self.ff = open(self.pathtemp + "/Profs.dbsp", "r")
@@ -611,8 +619,11 @@ class Ui_Form(object):
         self.label_21.setText("{0}".format(self.files))
 
     def SavProfs(self):
-        self.files = QtWidgets.QFileDialog.getSaveFileName(Form, "Зберегти дані", os.environ['USERPROFILE'],
-                                                           "dbs files (*.dbs)")
+        if sys.platform == 'win32':
+            self.sevs = os.environ['USERPROFILE']
+        if sys.platform == 'linux':
+            self.sevs = os.environ['HOME']
+        self.files = QtWidgets.QFileDialog.getSaveFileName(Form, "Зберегти дані", self.sevs, "dbs files (*.dbs)")
 
         self.files = self.files[0]
         if self.files == "":
@@ -634,7 +645,7 @@ class Ui_Form(object):
         try:
             self.texts = self.comboBox.currentText()
             self.textsp = self.texts
-            self.ff = open(self.pathtemp + "\\Profs.dbsp", "r")
+            self.ff = open(self.pathtemp + "/Profs.dbsp", "r")
             self.files = self.ff.read()
             self.ff.close()
             WrData.Datas().ClearDB(files=self.files)
@@ -1371,7 +1382,10 @@ if __name__ == "__main__":
     if args.filename is not None:
         pethstart = args.filename
     else:
-        pethstart = os.environ['USERPROFILE'] + "\Профоблік.dbs"
+        if sys.platform == 'win32':
+            pethstart = os.environ['USERPROFILE'] + "\Профоблік.dbs"
+        if sys.platform =='linux':
+            pethstart = os.environ['HOME'] + "/Профоблік.dbs"
     time.sleep(3)
     Form = QtWidgets.QWidget()
     ui = Ui_Form()

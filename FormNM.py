@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import sys
 import WrData
 import zlib
 import os
@@ -10,7 +11,10 @@ import Profs_rc
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_FormN(object):
-    pathtemp = tempfile.gettempdir() + "/Proftemp"
+    if sys.platform == 'win32':
+        pathtemp = tempfile.gettempdir() + "/Proftemp"
+    if sys.platform == 'linux':
+        pathtemp = os.environ['HOME'] + "/Proftemp"
     def setupUi(self, FormN):
         self.mains = WrData.Datas()
         FormN.setObjectName("FormN")

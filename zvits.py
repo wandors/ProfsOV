@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import tempfile
 from PyQt5 import QtCore, QtGui, QtWidgets, QtPrintSupport
 import Profs_rc
 
 class Window(QtWidgets.QWidget):
-    pathtemp = tempfile.gettempdir() + "/Proftemp"
+    if sys.platform == 'win32':
+        pathtemp = tempfile.gettempdir() + "/Proftemp"
+    if sys.platform == 'linux':
+        pathtemp = os.environ['HOME'] + "/Proftemp"
     titles = ""
     def __init__(self, titles):
         QtWidgets.QDialog.__init__(self)

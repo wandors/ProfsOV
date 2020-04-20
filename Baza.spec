@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['Baza.pyw'],
-             pathex=['C:/Python37/Lib/site-packages/PyQt5/Qt/bin', 'D:\\Документи_диска_С\\Службові документи\\Полунець\\Sorcce\\ProfsOV'],
+a = Analysis(['Baza.py'],
+             pathex=['/home/wandors/PycharmProjects/ProfsOV'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -26,7 +26,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False , icon='Profico.ico')
+          console=True )
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
