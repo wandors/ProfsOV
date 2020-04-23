@@ -22,10 +22,12 @@ from zvits import Window
 
 class Ui_Form(object):
     if sys.platform == 'win32':
+        fontp = 'MS Shell Dlg 2'
         if not os.path.exists(tempfile.gettempdir() + "\Proftemp"):
             os.mkdir(tempfile.gettempdir() + "\Proftemp")
         pathtemp = tempfile.gettempdir() + "\Proftemp"
     if sys.platform == 'linux':
+        fontp = 'Ubuntu'
         if not os.path.exists(os.environ['HOME'] + "/Proftemp"):
             os.mkdir(os.environ['HOME'] + "/Proftemp")
         pathtemp = os.environ['HOME'] + "/Proftemp"
@@ -76,8 +78,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_13.setFont(font)
-        self.label_13.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_13.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_13.setAlignment(QtCore.Qt.AlignCenter)
         self.label_13.setObjectName("label_13")
         self.gridLayout.addWidget(self.label_13, 9, 5, 1, 2)
@@ -145,8 +147,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_18.setFont(font)
-        self.label_18.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_18.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_18.setAlignment(QtCore.Qt.AlignCenter)
         self.label_18.setObjectName("label_18")
         self.gridLayout.addWidget(self.label_18, 14, 5, 1, 2)
@@ -191,8 +193,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_14.setFont(font)
-        self.label_14.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_14.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_14.setAlignment(QtCore.Qt.AlignCenter)
         self.label_14.setObjectName("label_14")
         self.gridLayout.addWidget(self.label_14, 10, 5, 1, 2)
@@ -257,8 +259,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_10.setFont(font)
-        self.label_10.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_10.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_10.setAlignment(QtCore.Qt.AlignCenter)
         self.label_10.setObjectName("label_10")
         self.gridLayout.addWidget(self.label_10, 6, 5, 1, 2)
@@ -296,8 +298,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_15.setFont(font)
-        self.label_15.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_15.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_15.setAlignment(QtCore.Qt.AlignCenter)
         self.label_15.setObjectName("label_15")
         self.gridLayout.addWidget(self.label_15, 11, 5, 1, 2)
@@ -309,8 +311,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_11.setFont(font)
-        self.label_11.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_11.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_11.setAlignment(QtCore.Qt.AlignCenter)
         self.label_11.setObjectName("label_11")
         self.gridLayout.addWidget(self.label_11, 7, 5, 1, 2)
@@ -338,8 +340,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_12.setFont(font)
-        self.label_12.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_12.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_12.setAlignment(QtCore.Qt.AlignCenter)
         self.label_12.setObjectName("label_12")
         self.gridLayout.addWidget(self.label_12, 8, 5, 1, 2)
@@ -416,8 +418,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_16.setFont(font)
-        self.label_16.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_16.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         self.gridLayout.addWidget(self.label_16, 12, 5, 1, 2)
@@ -437,8 +439,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(9)
         self.label_17.setFont(font)
-        self.label_17.setStyleSheet("font: 75 10pt \"MS Shell Dlg 2\";\n"
-                                    "background-color: rgb(255, 255, 255);")
+        self.label_17.setStyleSheet("font: 75 10pt \"{0}\";\n"
+                                    "background-color: rgb(255, 255, 255);".format(self.fontp))
         self.label_17.setAlignment(QtCore.Qt.AlignCenter)
         self.label_17.setObjectName("label_17")
         self.gridLayout.addWidget(self.label_17, 13, 5, 1, 2)
