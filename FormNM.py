@@ -552,6 +552,7 @@ class Ui_FormN(object):
         self.comboBox_6.setItemText(11, _translate("FormN", "ДСР"))
         self.comboBox_6.setItemText(12, _translate("FormN", "КДіР"))
         self.comboBox_6.setItemText(13, _translate("FormN", "ПКТ"))
+        self.comboBox_6.setItemText(13, _translate("FormN", "СІЗО"))
         self.checkBox.setText(_translate("FormN", "Тимчасово\nвибув"))
 
     def btnstate(self, b):
