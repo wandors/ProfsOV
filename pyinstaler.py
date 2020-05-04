@@ -17,7 +17,7 @@ else:
     pacs = "--console"
 
 if sys.platform == 'win32':
-    os.system("pyinstaller.exe  {0}  --icon={1}.ico  {2}.pyw --name={3} --paths={4} --paths={5}".format(pacs, icons, scripts, names, path, pathQt))
+    os.system("pyinstaller.exe  {0}  --icon={1}.ico  {2}.py --name={3} --paths={4} --paths={5}".format(pacs, icons, scripts, names, path, pathQt))
 elif sys.platform == 'linux':
     os.system("pyinstaller  {0}  --icon={1}.ico  {2}.py --name={3}".format(pacs, icons, scripts, names))
 
