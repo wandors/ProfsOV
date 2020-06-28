@@ -11,13 +11,12 @@ class Window(QtWidgets.QWidget):
         pathtemp = tempfile.gettempdir() + "/Proftemp"
     if sys.platform == 'linux':
         pathtemp = os.environ['HOME'] + "/Proftemp"
-    titles = ""
     def __init__(self, titles):
         QtWidgets.QDialog.__init__(self)
         self.setFixedSize(960, 600)
         self.resolution = QtWidgets.QDesktopWidget().screenGeometry()
-        self.move((self.resolution.width() / 2) - (self.frameSize().width() / 2),
-                  (self.resolution.height() / 2) - (self.frameSize().height() / 2))
+        self.move(int((self.resolution.width() / 2) - (self.frameSize().width() / 2)),
+                  int((self.resolution.height() / 2) - (self.frameSize().height() / 2)))
         self.activateWindow()
         self.setWindowTitle(self.tr(titles))
         icon = QtGui.QIcon()
@@ -75,7 +74,11 @@ class Window(QtWidgets.QWidget):
         self.buttonPreview.setEnabled(enable)
 
     def topdf(self):
-        self.files = QtWidgets.QFileDialog.getSaveFileName(self, "Зберегти дані", os.environ['USERPROFILE'] + "/Documents", "PDF (*.pdf)")
+        if sys.platform == 'win32':
+            self.sevs = os.environ['USERPROFILE'] + "/Documents"
+        if sys.platform == 'linux':
+            self.sevs = os.environ['HOME']
+        self.files = QtWidgets.QFileDialog.getSaveFileName(self, "Зберегти дані", self.sevs, "PDF (*.pdf)")
         self.files = self.files[0]
         if self.files != "":
             doc = QtGui.QTextDocument()
