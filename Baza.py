@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-iltins
 
 __author__ = "Сергій Полунець"
-__versions__ = "v.3.5.6.3"
+__versions__ = "v.3.8.1.1"
 
 import argparse
 import datetime
@@ -43,8 +43,8 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         self.resolution = QtWidgets.QDesktopWidget().screenGeometry()
         Form.setFixedSize(1120, 650)
-        Form.move((self.resolution.width() / 2) - (Form.frameSize().width() / 2),
-                  (self.resolution.height() / 2) - (Form.frameSize().height() / 2))
+        Form.move(int((self.resolution.width() / 2) - (Form.frameSize().width() / 2)),
+                  int((self.resolution.height() / 2) - (Form.frameSize().height() / 2)))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
@@ -618,7 +618,7 @@ class Ui_Form(object):
             self.ff = open(self.pathtemp + "/Profs.dbsp", "r")
             self.ffpath = self.ff.read()
             self.ff.close()
-            shutil.copy(self.ffpath, self.files)
+            shutil.copyfile(self.ffpath, self.files)
         self.pushButton_2.setEnabled(False)
 
     def combo_chosen(self):
@@ -804,7 +804,7 @@ class Ui_Form(object):
         self.sefi.write("</head>")
         self.sefi.write("<body>")
         self.sefi.write(
-            "\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"18\">Список підоблікових осіб станом {0}р.</font> </h1>".format(
+            "\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"5\">Список підоблікових осіб станом {0}р.</font> </h1>".format(
                 time.strftime("%d.%m.%Y")))
         self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style>")
         self.proers = self.dats
@@ -834,7 +834,7 @@ class Ui_Form(object):
                     else:
                         self.wisitse = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\">- {0} {1} {2}, {3} р. н.  {4} {5}</font> </p>".format(
+                        "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"3\">- {0} {1} {2}, {3} р. н.  {4} {5}</font> </p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
 
         for i in self.proers:
@@ -842,7 +842,7 @@ class Ui_Form(object):
                 self.i = self.proers.get(i)
                 if self.i.__len__() > 0:
                     self.sefi.write("<style>p {line-height: 2;} p {line-height: 1;}</style><br>")
-                    self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"6\"><b>* {0}</b></font> </p>".format(str(i)))
+                    self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"><b>* {0}</b></font> </p>".format(str(i)))
                     self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style><br>")
                 for ia in self.i:
                     self.priis = self.i.setdefault(ia)
@@ -864,9 +864,10 @@ class Ui_Form(object):
                     else:
                         self.wisitse = ""
                     self.sefi.write(
-                        "\t<p align=\"left\"><font size=\"5\">- {0} {1} {2}, {3} р. н.  {4} "
-                        "</font> <font color=\"red\" font face=\"Times New Roman\" size=\"4\" ><b>{5}</b></font></p>".format(
+                        "\t<p align=\"left\"><font size=\"3\">- {0} {1} {2}, {3} р. н.  {4} "
+                        "</font> <font color=\"red\" font face=\"Times New Roman\" size=\"3\" ><b>{5}</b></font></p>".format(
                             self._soname, self._name, self._father, self._brsd, self._vides, self.wisitse))
+        self.sefi.write("<br>")
         self.sefi.close()
         self.uiN = Window("Список підоблікових")
         self.uiN.handleOpen()
@@ -1302,7 +1303,7 @@ class Ui_Form(object):
         self.sefi.write("<head>")
         self.sefi.write("\t<meta charset=\"windows-1251\">")
         self.sefi.write("</head>")
-        self.sefi.write("\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"7\">Державна установа<br>«Полицька виправна колонія (№76)»</font> </h1>")
+        self.sefi.write("\t<h1 align=\"center\"> <font face=\"Times New Roman\" size=\"6\">Державна установа<br>«Полицька виправна колонія (№76)»</font> </h1>")
         self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style>")
         self.ffs = open(self.pathtemp + "/Profs.dbsp", "r")
         self.filess = self.ffs.read()
@@ -1317,7 +1318,7 @@ class Ui_Form(object):
                 for ip in self.proerss:
                     self.i = self.proerss.get(i)
                     if str(ip) == str(i):
-                        self.sefi.write("\t<p align=\"Center\"><font face=\"Times New Roman\" size=\"5\"><b>{0}</b></font> </p>".format(str(self.listprof.get(ip))))
+                        self.sefi.write("\t<p align=\"Center\"><font face=\"Times New Roman\" size=\"4\"><b>{0}</b></font> </p>".format(str(self.listprof.get(ip))))
                         if self.i.__len__() > 0:
                             self.xx = 0
                             for ia in self.i:
@@ -1328,14 +1329,15 @@ class Ui_Form(object):
                                 self._father = str("{0}".format(self.priis['father']))
                                 self._brsd = str("{0}".format(self.priis['birsdey']))
                                 self.sefi.write(
-                                    "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"> {0}. {1} {2} {3} {4} р.н."
+                                    "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"> {0}. {1} {2} {3} {4} р.н."
                                     "</font></p>".format(self.xx, self._soname, self._name, self._father, self._brsd[6:]))
             self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style><br><br>")
-            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>Оперуповноважений оперативного відділу </b></font></p>")
-            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>державної установи «Полицька </b></font></p>")
-            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>виправна колонія (№76)»</b></font></p>")
-            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"5\"><b>капітан внутрішньої служби &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-                            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Полунець С.В. </b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"><b>Оперуповноважений оперативного відділу </b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"><b>державної установи «Полицька </b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"><b>виправна колонія (№76)»</b></font></p>")
+            self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"><b>капітан внутрішньої служби &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Полунець С.В. </b></font></p><br>")
+
 
         except:
             self.sefi.close()
