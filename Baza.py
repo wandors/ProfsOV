@@ -1330,7 +1330,7 @@ class Ui_Form(object):
                                 self._brsd = str("{0}".format(self.priis['birsdey']))
                                 self.sefi.write(
                                     "\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"> {0}. {1} {2} {3} {4} р.н."
-                                    "</font></p>".format(self.xx, self._soname, self._name, self._father, self._brsd[6:]))
+                                    "</font></p>".format(self.xx, self._soname, self._name, self._father, self._brsd))
             self.sefi.write("<style>p {line-height: 2;} p {line-height: 0.5;}</style><br><br>")
             self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"><b>Оперуповноважений оперативного відділу </b></font></p>")
             self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"><b>державної установи «Полицька </b></font></p>")

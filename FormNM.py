@@ -20,8 +20,8 @@ class Ui_FormN(object):
         FormN.setObjectName("FormN")
         FormN.resize(599, 449)
         self.resolution = QtWidgets.QDesktopWidget().screenGeometry()
-        FormN.move(int((self.resolution.width() / 2) - (FormN.frameSize().width() / 2)),
-                   int((self.resolution.height() / 2) - (FormN.frameSize().height() / 2)))
+        FormN.move((self.resolution.width() / 2) - (FormN.frameSize().width() / 2),
+                   (self.resolution.height() / 2) - (FormN.frameSize().height() / 2))
         FormN.setWindowFlags(QtCore.Qt.Dialog | QtCore.Qt.WindowSystemMenuHint)
         FormN.activateWindow()
         font = QtGui.QFont()
@@ -460,7 +460,6 @@ class Ui_FormN(object):
         self.comboBox_6.addItem("")
         self.comboBox_6.addItem("")
         self.comboBox_6.addItem("")
-        self.comboBox_6.addItem("")
         self.gridLayout_10.addWidget(self.comboBox_6, 11, 3, 1, 1)
         self.checkBox = QtWidgets.QCheckBox(FormN)
         self.checkBox.setChecked(True)
@@ -509,7 +508,7 @@ class Ui_FormN(object):
         self.label_36.setText(_translate("FormN", "Стаття ККУ"))
         self.pushButton_12.setText(_translate("FormN", "Закрити"))
         self.pushButton_11.setText(_translate("FormN", "Зберегти"))
-        self.label_41.setText(_translate("FormN", "Кінець строку"))
+        self.label_41.setText(_translate("FormN", "Кунець строку"))
         self.label_40.setText(_translate("FormN", "УДЗ"))
         self.label_35.setText(_translate("FormN", "Підстава на облік"))
         self.label_2.setText(_translate("FormN", "Відділення"))
@@ -553,7 +552,7 @@ class Ui_FormN(object):
         self.comboBox_6.setItemText(11, _translate("FormN", "ДСР"))
         self.comboBox_6.setItemText(12, _translate("FormN", "КДіР"))
         self.comboBox_6.setItemText(13, _translate("FormN", "ПКТ"))
-        self.comboBox_6.setItemText(14, _translate("FormN", "СІЗО"))
+        self.comboBox_6.setItemText(13, _translate("FormN", "СІЗО"))
         self.checkBox.setText(_translate("FormN", "Тимчасово\nвибув"))
 
     def btnstate(self, b):
@@ -636,7 +635,7 @@ class Ui_FormN(object):
             pass
         if self.lineEdit_42.text() != "":
             self.files = self.filest
-            if self.files == "":
+            if self.files != "":
                 with open(self.filess, "w") as f:
                     f.write(self.files)
                     f.close()
