@@ -562,7 +562,11 @@ class Ui_FormN(object):
             self.out = "present"
 
     def filephot(self):
-        self.filesph = QtWidgets.QFileDialog.getOpenFileName(None, "Вибрати фото ...", os.environ['USERPROFILE'] + "/Documents", "Images (*.png *.jpg *.jpeg)")
+        if sys.platform == 'win32':
+            self.loads = os.environ['USERPROFILE']
+        if sys.platform == 'linux':
+            self.loads = os.environ['HOME']
+        self.filesph = QtWidgets.QFileDialog.getOpenFileName(None, "Вибрати фото ...", self.loads + "/Documents", "Images (*.png *.jpg *.jpeg)")
         self.filesph = self.filesph[0]
         if self.filesph == "":
             self.fp = open(self.pathtemp + "/_zpn.png", "rb")
