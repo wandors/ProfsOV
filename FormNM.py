@@ -460,6 +460,8 @@ class Ui_FormN(object):
         self.comboBox_6.addItem("")
         self.comboBox_6.addItem("")
         self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
         self.gridLayout_10.addWidget(self.comboBox_6, 11, 3, 1, 1)
         self.checkBox = QtWidgets.QCheckBox(FormN)
         self.checkBox.setChecked(True)
@@ -549,10 +551,11 @@ class Ui_FormN(object):
         self.comboBox_6.setItemText(8, _translate("FormN", "9"))
         self.comboBox_6.setItemText(9, _translate("FormN", "ДІЗО"))
         self.comboBox_6.setItemText(10, _translate("FormN", "ДПК"))
-        self.comboBox_6.setItemText(11, _translate("FormN", "ДСР"))
-        self.comboBox_6.setItemText(12, _translate("FormN", "КДіР"))
-        self.comboBox_6.setItemText(13, _translate("FormN", "ПКТ"))
-        self.comboBox_6.setItemText(13, _translate("FormN", "СІЗО"))
+        self.comboBox_6.setItemText(11, _translate("FormN", "ДПВ"))
+        self.comboBox_6.setItemText(12, _translate("FormN", "ДСР"))
+        self.comboBox_6.setItemText(13, _translate("FormN", "КДіР"))
+        self.comboBox_6.setItemText(14, _translate("FormN", "ПКТ"))
+        self.comboBox_6.setItemText(15, _translate("FormN", "СІЗО"))
         self.checkBox.setText(_translate("FormN", "Тимчасово\nвибув"))
 
     def btnstate(self, b):
@@ -596,11 +599,6 @@ class Ui_FormN(object):
         self.cengbut()
 
     def _saves(self):
-        if not self.checkBox.isChecked():
-            self.out = "present"
-            self.checkBox.setChecked(False)
-        else:
-            self.checkBox.setChecked(True)
         try:
             self.fpp = open(self.pathtemp + "/_zpn.png", "rb")
             self.filez = self.fpp.read()
@@ -719,7 +717,10 @@ class Ui_FormN(object):
         self.pushButton_11.setEnabled(False)
 
     def cengbut(self):
-        if self.lineEdit_42.text() == "" or self.lineEdit_43.text() == "" or self.lineEdit_44.text() == "":
+        if self.lineEdit_42.text() == "" or self.lineEdit_43.text() == "" or self.lineEdit_44.text() == "" or self.checkBox.isChecked() == True:
             self.pushButton_11.setEnabled(False)
+            self.checkBox.setChecked(True)
         else:
             self.pushButton_11.setEnabled(True)
+            self.checkBox.setChecked(False)
+            self.out = "present"

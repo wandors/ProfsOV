@@ -71,7 +71,7 @@ class Datas:
             self.prifis = {"soname": self.soname, "name": self.name, "father": self.father,
                            "birsdey": self.birsdey, "profov": self.profov, "stt": self.stt,
                            "begin_dey": self.begin_dey, "DSR": self.DSR, "ZBM": self.ZBM,
-                           "UDZ": self.UDZ, "end_dey": self.end_dey, "VID": self.vid, "PHOT": self.phot, "OUTS": self.outs}
+                           "UDZ": self.UDZ, "end_dey": self.end_dey, "VID": self.vid, "PHOT": self.photo, "OUTS": self.outs}
             self.proflist = {self.profov: {self.lostd: self.prifis}}
             self.dbfile = open(filer, 'wb')
             self.dbms = self.proflist
