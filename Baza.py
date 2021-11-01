@@ -180,6 +180,7 @@ class Ui_Form(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.gridLayout.addWidget(self.comboBox, 2, 0, 1, 6)
         self.label_14 = QtWidgets.QLabel(Form)
         font = QtGui.QFont()
@@ -545,20 +546,21 @@ class Ui_Form(object):
         self.comboBox.setItemText(9, _translate("Form", "Захоплення заручників"))
         self.comboBox.setItemText(10, _translate("Form", "Зловживання владою або службовим становищем")) #ч.2 ст. 364
         self.comboBox.setItemText(11, _translate("Form", "Злодіїв в законі"))
-        self.comboBox.setItemText(12, _translate("Form", "Лідер ОЗГ"))
-        self.comboBox.setItemText(13, _translate("Form", "Масові заворушення")) #ст.330
-        self.comboBox.setItemText(14, _translate("Form", "Напад"))
-        self.comboBox.setItemText(15, _translate("Form", "Наркоділки з міжрегіональними звязками")) #ст.305
-        self.comboBox.setItemText(16, _translate("Form", "Нецільове використання бюджетних коштів"))  # ч.2 ст.210
-        self.comboBox.setItemText(17, _translate("Form", "Організація азартних ігор під матеріалну зацікавленість"))
-        self.comboBox.setItemText(18, _translate("Form", "Проти основ національної безпеки"))
-        self.comboBox.setItemText(19, _translate("Form", "Резонанс в ЗМІ"))
-        self.comboBox.setItemText(20, _translate("Form", "Розв'язування війни"))# ст.437
-        self.comboBox.setItemText(21, _translate("Form", "Службові злочини"))# ч.5 ст.191
-        self.comboBox.setItemText(22, _translate("Form", "Тероризм"))# ст.258-ст.258\5
-        self.comboBox.setItemText(23, _translate("Form", "У сфері державної таємниці"))# ч.2 ч.3 ст.368
-        self.comboBox.setItemText(24, _translate("Form", "Ухилення від сплати податків")) # ч.2 ч.3 ст.212
-        self.comboBox.setItemText(25, _translate("Form", "Шахрайство"))# ч.4 ст.190
+        self.comboBox.setItemText(12, _translate("Form", "Злочинний вплив")) #ст.255
+        self.comboBox.setItemText(13, _translate("Form", "Лідер ОЗГ"))
+        self.comboBox.setItemText(14, _translate("Form", "Масові заворушення")) #ст.330
+        self.comboBox.setItemText(15, _translate("Form", "Напад"))
+        self.comboBox.setItemText(16, _translate("Form", "Наркоділки з міжрегіональними звязками")) #ст.305
+        self.comboBox.setItemText(17, _translate("Form", "Нецільове використання бюджетних коштів"))  # ч.2 ст.210
+        self.comboBox.setItemText(18, _translate("Form", "Організація азартних ігор під матеріалну зацікавленість"))
+        self.comboBox.setItemText(19, _translate("Form", "Проти основ національної безпеки"))
+        self.comboBox.setItemText(20, _translate("Form", "Резонанс в ЗМІ"))
+        self.comboBox.setItemText(21, _translate("Form", "Розв'язування війни"))# ст.437
+        self.comboBox.setItemText(22, _translate("Form", "Службові злочини"))# ч.5 ст.191
+        self.comboBox.setItemText(23, _translate("Form", "Тероризм"))# ст.258-ст.258\5
+        self.comboBox.setItemText(24, _translate("Form", "У сфері державної таємниці"))# ч.2 ч.3 ст.368
+        self.comboBox.setItemText(25, _translate("Form", "Ухилення від сплати податків")) # ч.2 ч.3 ст.212
+        self.comboBox.setItemText(26, _translate("Form", "Шахрайство"))# ч.4 ст.190
         self.label_8.setText(_translate("Form", "УДЗ"))
         self.label_12.setText(_translate("Form", "Зловживання владою або службовим становищем"))
         self.label_7.setText(_translate("Form", "ЗБМ"))
@@ -1289,28 +1291,30 @@ class Ui_Form(object):
         self.uiN.show()
 
     def _Control(self):
-        self.listprof = {"Злодіїв в законі": "п.1 <З>",
-                         "Авторитет": "п.1 <А>",
-                         "Лідер ОЗГ": "п.1  <Л>",
-                         "Резонанс в ЗМІ": "п.2",
-                         "Проти основ національної безпеки": "п.3",
-                         "Вбивство на замовлення": "п.4",
-                         "Бандетизм": "п.5",
-                         "Наркоділки з міжрегіональними звязками": "п.6",
-                         "Шахрайство": "п.7",
-                         "Службові злочини": "п.8",
-                         "Нецільове використання бюджетних коштів": "п.9",
-                         "Ухилення від сплати податків": "п.10",
-                         "Зловживання владою або службовим становищем": "п.11",
-                         "Хабарр": "п.12",
-                         "Тероризм": "п.13",
-                         "Вступили в незаконні бандитські угрупування": "п.14",
+        self.listprof = {"Злодіїв в законі": "п. 1 <З>",
+                         "Авторитет": "п. 1 <А>",
+                         "Лідер ОЗГ": "п. 1  <Л>",
+                         "Резонанс в ЗМІ": "п. 2",
+                         "Проти основ національної безпеки": "п. 3",
+                         "Вбивство на замовлення": "п. 4",
+                         "Бандетизм": "п. 5",
+                         "Наркоділки з міжрегіональними звязками": "п. 6",
+                         "Шахрайство": "п. 7",
+                         "Службові злочини": "п. 8",
+                         "Нецільове використання бюджетних коштів": "п. 9",
+                         "Ухилення від сплати податків": "п. 10",
+                         "Зловживання владою або службовим становищем": "п. 11",
+                         "Хабарр": "п. 12",
+                         "Тероризм": "п. 13",
+                         "Вступили в незаконні бандитські угрупування": "п. 14",
                          "Масові заворушення": "п.15",
-                         "Усфері державної таємниці": "п.16",
-                         "Розв'язування війни": "п.17",
-                         #:"п.18",
+                         "Усфері державної таємниці": "п. 16",
+                         "Розв'язування війни": "п. 17",
+                         "Злочинний вплив": "п.18",
                          #"Напад":"п.19",
-                         "Дії що дезорганізують роботу установи": "п.20"}
+                         "Дії що дезорганізують роботу установи": "п. 18",
+                         "Вживання наркотичних речовин": "п. 21",
+                         "телефонні шахраї": "п. 22"}
         self.temfil = self.pathtemp + "/_temp.html"
         self.sefi = open(self.temfil, 'w')
         self.sefi.write("<!DOCTYPE html>")
@@ -1353,7 +1357,6 @@ class Ui_Form(object):
             self.sefi.write("\t<p align=\"left\"><font face=\"Times New Roman\" size=\"4\"><b>капітан внутрішньої служби &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                             "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                             "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Полунець С.В. </b></font></p><br>")
-
 
         except:
             self.sefi.close()
